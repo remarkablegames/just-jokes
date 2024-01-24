@@ -3,6 +3,9 @@
   "version": "1.0.0-alpha",
   "description": "Just Jokes",
   "author": "Mark <mark@remarkablemark.org>",
+  "contributors": [
+    "Robert Cohen <rmacohen@gmail.com>"
+  ],
   "scripts": {
     "build": "npm run clean && vite build",
     "clean": "rm -rf dist",
