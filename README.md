@@ -2,11 +2,13 @@
 
 [![build](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml)
 
-Just Jokes.
+😂 [Just Jokes](https://remarkablegames.org/just-jokes/).
 
 ## Stack
 
+- [DriftDB](https://driftdb.com/)
 - [MUI](https://mui.com/)
+- [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 
 ## Prerequisites
