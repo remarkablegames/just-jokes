@@ -1,7 +1,7 @@
 {
-  "name": "party-game-template",
+  "name": "just-jokes",
   "version": "1.0.0-alpha",
-  "description": "Party Game Template",
+  "description": "Just Jokes",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "npm run clean && vite build",

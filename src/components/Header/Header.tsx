@@ -21,7 +21,7 @@ export default function Header() {
               underline="hover"
               variant="h6"
             >
-              Party Game Template
+              Just Jokes
             </Link>
           </Box>
 
@@ -29,7 +29,7 @@ export default function Header() {
             aria-label="Open GitHub repository"
             color="inherit"
             component={Link}
-            href="https://github.com/remarkablegames/party-game-template"
+            href="https://github.com/remarkablegames/just-jokes"
             target="_blank"
             rel="noopener noreferrer"
           >

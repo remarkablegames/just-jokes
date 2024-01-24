@@ -1,8 +1,8 @@
-# party-game-template
+# just-jokes
 
-[![build](https://github.com/remarkablegames/party-game-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/party-game-template/actions/workflows/build.yml)
+[![build](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml)
 
-Party game template.
+Just Jokes.
 
 ## Stack
 
@@ -18,8 +18,8 @@ Party game template.
 Clone the repository:
 
 ```sh
-git clone https://github.com/remarkablegames/party-game-template.git
-cd party-game-template
+git clone https://github.com/remarkablegames/just-jokes.git
+cd just-jokes
 ```
 
 Use the Node.js version:

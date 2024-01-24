@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Box sx={{ textAlign: 'center' }}>
       <Typography component="h1" paragraph variant="h2">
-        Party Game Template
+        Just Jokes
       </Typography>
 
       <Typography paragraph variant="h5">
