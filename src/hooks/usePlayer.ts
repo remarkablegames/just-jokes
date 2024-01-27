@@ -11,16 +11,19 @@ interface ActionPayload {
   playerId: string;
   active?: boolean;
   nickname?: string;
+  voted?: boolean;
 }
 
 enum ActionType {
   active = 'active',
   nickname = 'nickname',
+  voted = 'voted',
 }
 
 const initialPlayerState = {
   nickname: '',
   active: false,
+  voted: false,
 };
 
 export function usePlayer() {
@@ -52,6 +55,11 @@ export function usePlayer() {
           setPlayer(player);
           return state;
 
+        case ActionType.voted:
+          player.voted = payload.voted!;
+          setPlayer(player);
+          return state;
+
         default:
           return state;
       }
@@ -77,6 +85,12 @@ export function usePlayer() {
       dispatch({
         type: ActionType.nickname,
         payload: { playerId, nickname },
+      }),
+
+    setPlayerVoted: (voted: boolean) =>
+      dispatch({
+        type: ActionType.voted,
+        payload: { playerId, voted },
       }),
   };
 }
