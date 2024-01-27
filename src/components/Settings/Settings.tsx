@@ -4,19 +4,29 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
-import { SettingsDefaultValue, SettingsName } from 'src/types';
+import { useSettings } from 'src/hooks';
+import {
+  type SettingsData,
+  SettingsDefaultValue,
+  SettingsName,
+} from 'src/types';
 
 const rounds = [1, 2, 3, 4, 5];
 const players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function Settings() {
+  const { setSettings } = useSettings();
+
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    Number(formData.get(SettingsName.players));
-    Number(formData.get(SettingsName.rounds));
-    Number(formData.get(SettingsName.timer));
+    setSettings(
+      Object.values(SettingsName).reduce((accumulator, value) => {
+        accumulator[value] = Number(formData.get(value));
+        return accumulator;
+      }, {} as SettingsData),
+    );
   }
 
   return (

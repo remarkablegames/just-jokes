@@ -9,3 +9,5 @@ export enum SettingsDefaultValue {
   rounds = 3,
   timer = 30,
 }
+
+export type SettingsData = Record<keyof typeof SettingsDefaultValue, number>;
