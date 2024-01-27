@@ -35,7 +35,9 @@ export default function Players() {
               primaryTypographyProps={textProps}
             />
 
-            <ListItemText primary={votes} sx={{ textAlign: 'center' }} />
+            {Boolean(votes) && (
+              <ListItemText primary={votes} sx={{ textAlign: 'center' }} />
+            )}
           </ListItem>
         );
       })}
