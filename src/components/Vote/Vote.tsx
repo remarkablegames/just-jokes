@@ -1,9 +1,10 @@
 import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { useJoke, usePlayer } from 'src/hooks';
+import { useHost, useJoke, usePlayer } from 'src/hooks';
 
 export default function Vote() {
+  const { isHost } = useHost();
   const { jokes, voteJoke } = useJoke();
   const { player, setPlayerVoted } = usePlayer();
 
@@ -31,7 +32,7 @@ export default function Vote() {
 
       <br />
 
-      <Button variant="contained">Next Round</Button>
+      {isHost && <Button variant="contained">Next Round</Button>}
     </>
   );
 }
