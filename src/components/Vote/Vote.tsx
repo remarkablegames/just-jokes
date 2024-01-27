@@ -22,7 +22,7 @@ export default function Vote() {
       <Stack direction="row" spacing={2}>
         {Object.entries(jokes).map(([creatorId, joke]) => (
           <Badge
-            badgeContent={votes[creatorId]?.length}
+            badgeContent={votes[creatorId]}
             color="primary"
             key={creatorId}
           >

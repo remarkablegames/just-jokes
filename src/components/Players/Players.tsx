@@ -18,7 +18,6 @@ export default function Players() {
         const iconColor = player.active ? 'inherit' : 'disabled';
         const textProps =
           playerId === id ? { sx: { fontWeight: 'bold' } } : undefined;
-        const votesCount = votes[id]?.length;
 
         return (
           <ListItem dense key={id}>
@@ -35,8 +34,8 @@ export default function Players() {
               primaryTypographyProps={textProps}
             />
 
-            {Boolean(votesCount) && (
-              <ListItemText primary={votesCount} sx={{ textAlign: 'center' }} />
+            {votes[id] > 0 && (
+              <ListItemText primary={votes[id]} sx={{ textAlign: 'center' }} />
             )}
           </ListItem>
         );

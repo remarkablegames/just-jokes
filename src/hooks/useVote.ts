@@ -1,5 +1,4 @@
 import { useSharedReducer, useUniqueClientId } from 'driftdb-react';
-import { useState } from 'react';
 import { DatabaseKey } from 'src/types';
 
 interface Action {
@@ -16,8 +15,8 @@ enum ActionType {
   vote = 'vote',
 }
 
-function getInitialState(): string[] {
-  return [];
+function getInitialState() {
+  return 0;
 }
 
 function getInitialReducerState(clientId: string) {
@@ -28,7 +27,6 @@ function getInitialReducerState(clientId: string) {
 
 export function useVote() {
   const clientId = useUniqueClientId();
-  const [vote, setVote] = useState(getInitialState());
 
   const [votes, dispatch] = useSharedReducer<
     ReturnType<typeof getInitialReducerState>,
@@ -37,29 +35,23 @@ export function useVote() {
     DatabaseKey.votes,
     (state, action) => {
       const { payload, type } = action;
-      state[payload.playerId] = state[payload.playerId] || [];
-      const vote = state[payload.playerId];
+      state[payload.playerId] = state[payload.playerId] || 0;
 
       switch (type) {
         case ActionType.vote:
-          if (!vote.includes(payload.playerId!)) {
-            vote.push(payload.playerId!);
-          }
+          state[payload.playerId] += 1;
           break;
 
         case ActionType.reset:
-          setVote(getInitialState());
           return getInitialReducerState(clientId);
       }
 
-      setVote(vote);
       return state;
     },
     getInitialReducerState(clientId),
   );
 
   return {
-    vote,
     votes,
 
     voteJoke: (playerId: string) =>
