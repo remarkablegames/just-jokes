@@ -1,3 +1,4 @@
+import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useJoke, usePlayer } from 'src/hooks';
@@ -10,19 +11,21 @@ export default function Vote() {
     <Stack direction="row" spacing={2}>
       {Object.entries(jokes).map(([creatorId, joke]) => {
         return (
-          <Button
-            disabled={player.voted}
-            fullWidth
-            key={creatorId}
-            onClick={() => {
-              voteJoke(creatorId);
-              setPlayerVoted(true);
-            }}
-            sx={{ padding: 1, textTransform: 'none' }}
-            variant="outlined"
-          >
-            {joke.joke}
-          </Button>
+          <Badge badgeContent={joke.votes.length} color="primary">
+            <Button
+              disabled={player.voted}
+              fullWidth
+              key={creatorId}
+              onClick={() => {
+                voteJoke(creatorId);
+                setPlayerVoted(true);
+              }}
+              sx={{ padding: 1, textTransform: 'none' }}
+              variant="outlined"
+            >
+              {joke.joke}
+            </Button>
+          </Badge>
         );
       })}
     </Stack>
