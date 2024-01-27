@@ -5,11 +5,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { useHost, usePlayer } from 'src/hooks';
+import { useHost, useJoke, usePlayer } from 'src/hooks';
 
 export default function Players() {
   const { host } = useHost();
   const { players, playerId } = usePlayer();
+  const { jokes } = useJoke();
 
   return (
     <List component={Card}>
@@ -17,9 +18,10 @@ export default function Players() {
         const iconColor = player.active ? 'inherit' : 'disabled';
         const textProps =
           playerId === id ? { sx: { fontWeight: 'bold' } } : undefined;
+        const votes = jokes[id]?.votes.length;
 
         return (
-          <ListItem key={id}>
+          <ListItem dense key={id}>
             <ListItemIcon>
               {id === host ? (
                 <HostIcon color={iconColor} />
@@ -32,6 +34,8 @@ export default function Players() {
               primary={player.nickname}
               primaryTypographyProps={textProps}
             />
+
+            <ListItemText primary={votes} sx={{ textAlign: 'center' }} />
           </ListItem>
         );
       })}
