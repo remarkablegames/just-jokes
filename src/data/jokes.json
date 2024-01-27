@@ -1,0 +1,71 @@
+{
+  "0": {
+    "template": "Knock, knock.\nWho's there?\n{{noun1}}.\n{{noun2}} who?\n{{punchline}}",
+    "placeholders": {
+      "noun1": "noun",
+      "noun2": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "1": {
+    "template": "What did the {{noun1}} say to the {{noun2}}?\n{{punchline}}",
+    "placeholders": {
+      "noun1": "noun",
+      "noun2": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "2": {
+    "template": "What is something you can say in both a {{place1}} and in a {{place2}}?\n{{punchline}}",
+    "placeholders": {
+      "place1": "place",
+      "place2": "place",
+      "punchline": "punchline"
+    }
+  },
+  "3": {
+    "template": "What has {{noun1}} and {{noun2}}?\n{{punchline}}",
+    "placeholders": {
+      "noun1": "noun",
+      "noun2": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "4": {
+    "template": "What's the best thing about {{noun}}?\n{{punchline}}",
+    "placeholders": {
+      "noun": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "5": {
+    "template": "{{noun1}} and {{noun2}} walk into a bar.\n{{punchline}}",
+    "placeholders": {
+      "noun1": "noun",
+      "noun2": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "6": {
+    "template": "Did you hear about the {{noun}} who {{verb}}?\n{{punchline}}",
+    "placeholders": {
+      "noun": "noun",
+      "verb": "verb",
+      "punchline": "punchline"
+    }
+  },
+  "7": {
+    "template": "What do you call a {{noun}}?\n{{punchline}}",
+    "placeholders": {
+      "noun": "noun",
+      "punchline": "punchline"
+    }
+  },
+  "8": {
+    "template": "Why did the {{animal}} cross the road?\n{{punchline}}",
+    "placeholders": {
+      "animal": "animal",
+      "punchline": "punchline"
+    }
+  }
+}
