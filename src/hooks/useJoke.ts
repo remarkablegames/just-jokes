@@ -15,6 +15,7 @@ interface ActionPayload {
 
 enum ActionType {
   joke = 'joke',
+  reset = 'reset',
   vote = 'vote',
 }
 
@@ -41,22 +42,25 @@ export function useJoke() {
       state[payload.creatorId] = state[payload.creatorId] || {};
       const joke = state[payload.creatorId];
       joke.votes = joke.votes || [];
-      setJoke(joke);
 
       switch (type) {
         case ActionType.joke:
           state[payload.creatorId].joke = payload.joke!;
-          return state;
+          break;
 
         case ActionType.vote:
           if (!joke.votes.includes(payload.playerId!)) {
             joke.votes.push(payload.playerId!);
           }
-          return state;
+          break;
 
-        default:
-          return state;
+        case ActionType.reset:
+          setJoke(initialState);
+          return initialReducerState;
       }
+
+      setJoke(joke);
+      return state;
     },
     initialReducerState,
   );
@@ -84,6 +88,12 @@ export function useJoke() {
       dispatch({
         type: ActionType.vote,
         payload: { creatorId, playerId },
+      }),
+
+    resetJokes: () =>
+      dispatch({
+        type: ActionType.reset,
+        payload: { creatorId: '' },
       }),
   };
 }
