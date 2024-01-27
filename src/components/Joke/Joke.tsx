@@ -1,3 +1,8 @@
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 import Mustache from 'mustache';
 import { useState } from 'react';
 import { useJoke, usePlayer } from 'src/hooks';
@@ -7,22 +12,20 @@ import Placeholder from '../Placeholder';
 interface Props {
   template: string;
   placeholders: Record<string, string>;
-  onJokeUpdate: (joke: string) => void;
 }
 
 export default function Joke(props: Props) {
   const { playerId } = usePlayer();
-  const { joke, setJoke } = useJoke();
+  const { setJoke } = useJoke();
   const [placeholders, setPlaceholders] = useState<Props['placeholders']>({});
 
-  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
+  function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     const renderedJoke = Mustache.render(props.template, placeholders);
     setJoke({
       creatorId: playerId,
       joke: renderedJoke,
     });
-    props.onJokeUpdate(renderedJoke);
   }
 
   const templateNodes = Mustache.parse(props.template).map(([type, text]) => {
@@ -50,22 +53,16 @@ export default function Joke(props: Props) {
   });
 
   return (
-    <>
-      <div className="p-5 bg-blue-100">
-        <p className="leading-relaxed mb-4 whitespace-pre-wrap">
-          {templateNodes}
-        </p>
+    <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
+      <CardContent>
+        <Typography>{templateNodes}</Typography>
+      </CardContent>
 
-        <button
-          className="cursor-pointer bg-blue-500 text-white p-2 rounded"
-          type="submit"
-          onClick={handleSubmit}
-        >
+      <CardActions>
+        <Button type="submit" variant="contained">
           Submit
-        </button>
-      </div>
-
-      <p className="bg-blue-500 text-white p-2 rounded">{joke.joke}</p>
-    </>
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
