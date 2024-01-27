@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -19,26 +20,34 @@ export default function Settings() {
         Room
       </Typography>
 
-      <Card sx={{ padding: 1 }}>
-        <CardContent>
-          <TextField
-            defaultValue="4"
-            helperText="Number of players"
-            label="Players"
-            select
-          >
-            {players.map((value) => (
-              <MenuItem key={value} value={value}>
-                {value}
-              </MenuItem>
-            ))}
-          </TextField>
-        </CardContent>
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          Players
+        </Grid>
 
-        <CardActions>
-          <Button variant="contained">Start</Button>
-        </CardActions>
-      </Card>
+        <Grid item xs={8}>
+          <Card sx={{ padding: 1 }}>
+            <CardContent>
+              <TextField
+                defaultValue="4"
+                helperText="Number of players"
+                label="Players"
+                select
+              >
+                {players.map((value) => (
+                  <MenuItem key={value} value={value}>
+                    {value}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </CardContent>
+
+            <CardActions>
+              <Button variant="contained">Start</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
 
       <br />
 
