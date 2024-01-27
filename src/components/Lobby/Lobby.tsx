@@ -1,7 +1,12 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { RoomQRCode } from 'driftdb-react';
-import { useDebugDatabase, useSetHost, useSetPlayerActive } from 'src/hooks';
+import {
+  useDebugDatabase,
+  useRound,
+  useSetHost,
+  useSetPlayerActive,
+} from 'src/hooks';
 
 import Players from '../Players';
 import Settings from '../Settings';
@@ -10,6 +15,12 @@ export default function Lobby() {
   useDebugDatabase();
   useSetHost();
   useSetPlayerActive();
+
+  const { round } = useRound();
+
+  if (round) {
+    return null;
+  }
 
   return (
     <>

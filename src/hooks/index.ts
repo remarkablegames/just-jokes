@@ -3,6 +3,7 @@ export * from './useDispatch';
 export * from './useHost';
 export * from './useJoke';
 export * from './usePlayer';
+export * from './useRound';
 export * from './useSelector';
 export * from './useSetDocumentTitle';
 export * from './useSetHost';
