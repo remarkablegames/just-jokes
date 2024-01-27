@@ -8,7 +8,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useHost, useJoke, usePlayer } from 'src/hooks';
 
 export default function Players() {
-  const { host } = useHost();
+  const { isHost } = useHost();
   const { players, playerId } = usePlayer();
   const { jokes } = useJoke();
 
@@ -23,7 +23,7 @@ export default function Players() {
         return (
           <ListItem dense key={id}>
             <ListItemIcon>
-              {id === host ? (
+              {isHost ? (
                 <HostIcon color={iconColor} />
               ) : (
                 <PlayerIcon color={iconColor} />
