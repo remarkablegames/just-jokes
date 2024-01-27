@@ -1,3 +1,4 @@
+export * from './useDebugDatabase';
 export * from './useDispatch';
 export * from './useHost';
 export * from './useJoke';
