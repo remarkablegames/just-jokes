@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -33,9 +32,9 @@ export default function Joke(props: Props) {
     ([type, text], index) => {
       if (type === 'text') {
         return (
-          <Box component="span" key={index} sx={{ lineHeight: 2.5 }}>
+          <Typography component="span" key={index} sx={{ lineHeight: 2.5 }}>
             {text}
-          </Box>
+          </Typography>
         );
       }
 
