@@ -1,4 +1,5 @@
 import PlayerIcon from '@mui/icons-material/Face';
+import HostIcon from '@mui/icons-material/FaceRetouchingNatural';
 import Card from '@mui/material/Card';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -7,14 +8,12 @@ import ListItemText from '@mui/material/ListItemText';
 import { usePlayer } from 'src/hooks';
 
 export default function Players() {
-  const { player } = usePlayer();
+  const { player, isHost } = usePlayer();
 
   return (
     <List component={Card}>
       <ListItem>
-        <ListItemIcon>
-          <PlayerIcon />
-        </ListItemIcon>
+        <ListItemIcon>{isHost ? <HostIcon /> : <PlayerIcon />}</ListItemIcon>
 
         <ListItemText primary={player.nickname} />
       </ListItem>
