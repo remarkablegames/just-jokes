@@ -1,4 +1,4 @@
-import Typography from '@mui/material/Typography';
+import Round from 'src/components/Round';
 import { useRound } from 'src/hooks';
 
 export default function Game() {
@@ -8,11 +8,5 @@ export default function Game() {
     return null;
   }
 
-  return (
-    <>
-      <Typography component="h1" paragraph variant="h4">
-        Round {round}
-      </Typography>
-    </>
-  );
+  return <Round />;
 }
