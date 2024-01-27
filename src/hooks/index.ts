@@ -7,4 +7,5 @@ export * from './useSelector';
 export * from './useSetDocumentTitle';
 export * from './useSetHost';
 export * from './useSetPlayerActive';
+export * from './useSettings';
 export * from './useSnackbar';
