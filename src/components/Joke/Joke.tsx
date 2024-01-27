@@ -64,7 +64,11 @@ export default function Joke(props: Props) {
 
   return (
     <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
-      <CardHeader sx={{ paddingBottom: 0 }} title="Write a Joke:" />
+      <CardHeader
+        component="h2"
+        sx={{ margin: 0, paddingBottom: 0 }}
+        title="Write a Joke:"
+      />
 
       <CardContent>{templateNodes}</CardContent>
 
