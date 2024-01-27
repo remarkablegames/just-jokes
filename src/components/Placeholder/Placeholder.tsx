@@ -13,19 +13,18 @@ export default function Placeholder(props: Props) {
     getOptions(props.category)?.map((value) => ({ label: value, value })) || [];
 
   return (
-    <>
-      <Autocomplete
-        options={options}
-        isOptionEqualToValue={(option, value) => option.value === value.value}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label={props.category}
-            onChange={props.onChange}
-          />
-        )}
-        size="small"
-      />
-    </>
+    <Autocomplete
+      freeSolo
+      options={options}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label={props.category}
+          onChange={props.onChange}
+        />
+      )}
+      size="small"
+    />
   );
 }
