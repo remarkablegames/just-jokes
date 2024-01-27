@@ -1,8 +1,13 @@
+import PlayerIcon from '@mui/icons-material/Face';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -22,7 +27,14 @@ export default function Settings() {
 
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          Players
+          <List component={Card}>
+            <ListItem>
+              <ListItemIcon>
+                <PlayerIcon />
+              </ListItemIcon>
+              <ListItemText primary="Nickname" />
+            </ListItem>
+          </List>
         </Grid>
 
         <Grid item xs={8}>
