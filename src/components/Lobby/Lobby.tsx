@@ -1,13 +1,14 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { RoomQRCode } from 'driftdb-react';
-import { useDebugDatabase } from 'src/hooks';
+import { useDebugDatabase, useSetHost } from 'src/hooks';
 
 import Players from '../Players';
 import Settings from '../Settings';
 
 export default function Lobby() {
   useDebugDatabase();
+  useSetHost();
 
   return (
     <>
