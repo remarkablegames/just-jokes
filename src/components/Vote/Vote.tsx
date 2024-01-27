@@ -8,9 +8,9 @@ export default function Vote() {
   const { player, setPlayerVoted } = usePlayer();
 
   return (
-    <Stack direction="row" spacing={2}>
-      {Object.entries(jokes).map(([creatorId, joke]) => {
-        return (
+    <>
+      <Stack direction="row" spacing={2}>
+        {Object.entries(jokes).map(([creatorId, joke]) => (
           <Badge badgeContent={joke.votes.length} color="primary">
             <Button
               disabled={player.voted}
@@ -26,8 +26,12 @@ export default function Vote() {
               {joke.joke}
             </Button>
           </Badge>
-        );
-      })}
-    </Stack>
+        ))}
+      </Stack>
+
+      <br />
+
+      <Button variant="contained">Next Round</Button>
+    </>
   );
 }
