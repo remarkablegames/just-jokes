@@ -4,7 +4,6 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Mustache from 'mustache';
-import { useState } from 'react';
 import { useJoke, usePlayer } from 'src/hooks';
 
 import Placeholder from '../Placeholder';
@@ -17,11 +16,23 @@ interface Props {
 export default function Joke(props: Props) {
   const { playerId } = usePlayer();
   const { setJoke } = useJoke();
-  const [placeholders, setPlaceholders] = useState<Props['placeholders']>({});
 
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    const renderedJoke = Mustache.render(props.template, placeholders);
+
+    const formData = new FormData(event.target);
+    const data = Object.keys(props.placeholders).reduce(
+      (accumulator, value) => {
+        const text = formData.get(value);
+        if (typeof text === 'string') {
+          accumulator[value] = text;
+        }
+        return accumulator;
+      },
+      {} as Props['placeholders'],
+    );
+
+    const renderedJoke = Mustache.render(props.template, data);
     setJoke({
       creatorId: playerId,
       joke: renderedJoke,
@@ -42,14 +53,8 @@ export default function Joke(props: Props) {
         return (
           <Placeholder
             category={props.placeholders[text]}
-            id={text}
             key={text}
-            onChange={(event) => {
-              setPlaceholders({
-                ...placeholders,
-                [text]: event.target.value,
-              });
-            }}
+            name={text}
           />
         );
       }
@@ -58,26 +63,11 @@ export default function Joke(props: Props) {
 
   return (
     <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
-      <CardContent>
-        <Typography
-          component="div"
-          // sx={{ display: 'flex', alignItems: 'center' }}
-          /*
-          sx={{
-            height: '20rem',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-          */
-        >
-          {templateNodes}
-        </Typography>
-      </CardContent>
+      <CardContent>{templateNodes}</CardContent>
 
       <CardActions>
         <Button type="submit" variant="contained">
-          Submit
+          Create Joke
         </Button>
       </CardActions>
     </Card>

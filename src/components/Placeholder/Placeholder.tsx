@@ -4,8 +4,7 @@ import { getOptions } from 'src/helpers';
 
 interface Props {
   category: string;
-  id: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
 }
 
 export default function Placeholder(props: Props) {
@@ -16,11 +15,7 @@ export default function Placeholder(props: Props) {
       freeSolo
       options={options}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label={props.category}
-          onChange={props.onChange}
-        />
+        <TextField {...params} label={props.category} name={props.name} />
       )}
       size="small"
     />
