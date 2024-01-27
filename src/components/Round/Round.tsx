@@ -1,9 +1,18 @@
 import { getJoke } from 'src/helpers';
+import { useJoke, usePlayer } from 'src/hooks';
 
 import Joke from '../Joke';
+import Vote from '../Vote';
 
 export default function Round() {
-  const { placeholders, template } = getJoke();
+  const { playerId } = usePlayer();
+  const { jokes } = useJoke();
+
+  if (jokes[playerId]) {
+    return <Vote />;
+  }
+
+  const { template, placeholders } = getJoke();
 
   return <Joke template={template} placeholders={placeholders} />;
 }
