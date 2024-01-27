@@ -12,7 +12,6 @@ export default function Vote() {
           <Button
             fullWidth
             key={creatorId}
-            // raised
             sx={{ padding: 1, textTransform: 'none' }}
             variant="outlined"
           >

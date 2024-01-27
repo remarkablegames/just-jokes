@@ -8,7 +8,7 @@ export default function Round() {
   const { playerId } = usePlayer();
   const { jokes } = useJoke();
 
-  if (jokes[playerId]) {
+  if (jokes[playerId]?.joke) {
     return <Vote />;
   }
 
