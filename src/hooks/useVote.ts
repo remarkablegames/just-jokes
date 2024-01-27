@@ -71,7 +71,7 @@ export function useVote() {
     resetVotes: () =>
       dispatch({
         type: ActionType.reset,
-        payload: { playerId: '' },
+        payload: { playerId: clientId },
       }),
   };
 }
