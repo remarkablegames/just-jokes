@@ -9,14 +9,12 @@ interface Props {
 }
 
 export default function Placeholder(props: Props) {
-  const options =
-    getOptions(props.category)?.map((value) => ({ label: value, value })) || [];
+  const options = getOptions(props.category)?.map((option) => option) || [];
 
   return (
     <Autocomplete
       freeSolo
       options={options}
-      isOptionEqualToValue={(option, value) => option.value === value.value}
       renderInput={(params) => (
         <TextField
           {...params}
