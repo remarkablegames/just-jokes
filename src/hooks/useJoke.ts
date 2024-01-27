@@ -18,15 +18,17 @@ enum ActionType {
   vote = 'vote',
 }
 
+const initialState = {
+  joke: '',
+  votes: [] as string[],
+};
+
 export function useJoke() {
   const playerId = useUniqueClientId();
-  const [joke, setJoke] = useState({});
+  const [joke, setJoke] = useState(initialState);
 
   const initialReducerState = {
-    [playerId]: {
-      joke: '',
-      votes: [] as string[],
-    },
+    [playerId]: initialState,
   };
 
   const [jokes, dispatch] = useSharedReducer<

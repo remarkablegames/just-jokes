@@ -1,9 +1,17 @@
-import Typography from '@mui/material/Typography';
+import { getJoke } from 'src/helpers';
+
+import Joke from '../Joke';
 
 export default function Round() {
+  const { placeholders, template } = getJoke();
+
   return (
     <>
-      <Typography paragraph>Joke</Typography>
+      <Joke
+        template={template}
+        placeholders={placeholders}
+        onJokeUpdate={() => {}}
+      />
     </>
   );
 }
