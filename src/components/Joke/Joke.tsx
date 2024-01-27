@@ -33,31 +33,30 @@ export default function Joke(props: Props) {
       {} as Props['placeholders'],
     );
 
-    const renderedJoke = Mustache.render(props.template, data);
     setJoke({
       creatorId: playerId,
-      joke: renderedJoke,
+      joke: Mustache.render(props.template, data),
     });
   }
 
   const templateNodes = Mustache.parse(props.template).map(
     ([type, text], index) => {
-      if (type === 'text') {
-        return (
-          <Typography component="span" key={index} sx={{ lineHeight: 2.5 }}>
-            {text}
-          </Typography>
-        );
-      }
+      switch (type) {
+        case 'text':
+          return (
+            <Typography component="span" key={index} sx={{ lineHeight: 2.5 }}>
+              {text}
+            </Typography>
+          );
 
-      if (type === 'name') {
-        return (
-          <Placeholder
-            category={props.placeholders[text]}
-            key={text}
-            name={text}
-          />
-        );
+        case 'name':
+          return (
+            <Placeholder
+              category={props.placeholders[text]}
+              key={text}
+              name={text}
+            />
+          );
       }
     },
   );
