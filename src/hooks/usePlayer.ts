@@ -2,8 +2,6 @@ import { useSharedReducer, useUniqueClientId } from 'driftdb-react';
 import { useState } from 'react';
 import { DatabaseKey } from 'src/types';
 
-import { useHost } from './useHost';
-
 interface Action {
   type: ActionType;
   payload: ActionPayload;
@@ -26,7 +24,6 @@ const initialPlayerState = {
 };
 
 export function usePlayer() {
-  const { host } = useHost();
   const playerId = useUniqueClientId();
   const [player, setPlayer] = useState(initialPlayerState);
 
@@ -66,7 +63,6 @@ export function usePlayer() {
     player,
     playerId,
     players,
-    isHost: playerId === host,
 
     activePlayersCount: Object.values(players).filter(({ active }) => active)
       .length,

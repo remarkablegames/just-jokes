@@ -5,18 +5,23 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { usePlayer } from 'src/hooks';
+import { useHost, usePlayer } from 'src/hooks';
 
 export default function Players() {
-  const { player, isHost } = usePlayer();
+  const { host } = useHost();
+  const { players } = usePlayer();
 
   return (
     <List component={Card}>
-      <ListItem>
-        <ListItemIcon>{isHost ? <HostIcon /> : <PlayerIcon />}</ListItemIcon>
+      {Object.entries(players).map(([playerId, player]) => (
+        <ListItem key={playerId}>
+          <ListItemIcon>
+            {playerId === host ? <HostIcon /> : <PlayerIcon />}
+          </ListItemIcon>
 
-        <ListItemText primary={player.nickname} />
-      </ListItem>
+          <ListItemText primary={player.nickname} />
+        </ListItem>
+      ))}
     </List>
   );
 }
