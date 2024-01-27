@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -28,34 +29,51 @@ export default function Joke(props: Props) {
     });
   }
 
-  const templateNodes = Mustache.parse(props.template).map(([type, text]) => {
-    if (type === 'text') {
-      return text;
-    }
+  const templateNodes = Mustache.parse(props.template).map(
+    ([type, text], index) => {
+      if (type === 'text') {
+        return (
+          <Box component="span" key={index} sx={{ lineHeight: 2.5 }}>
+            {text}
+          </Box>
+        );
+      }
 
-    if (type === 'name') {
-      return (
-        <Placeholder
-          category={props.placeholders[text]}
-          id={text}
-          key={text}
-          onChange={(
-            event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-          ) => {
-            setPlaceholders({
-              ...placeholders,
-              [text]: event.target.value,
-            });
-          }}
-        />
-      );
-    }
-  });
+      if (type === 'name') {
+        return (
+          <Placeholder
+            category={props.placeholders[text]}
+            id={text}
+            key={text}
+            onChange={(event) => {
+              setPlaceholders({
+                ...placeholders,
+                [text]: event.target.value,
+              });
+            }}
+          />
+        );
+      }
+    },
+  );
 
   return (
     <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
       <CardContent>
-        <Typography>{templateNodes}</Typography>
+        <Typography
+          component="div"
+          // sx={{ display: 'flex', alignItems: 'center' }}
+          /*
+          sx={{
+            height: '20rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+          */
+        >
+          {templateNodes}
+        </Typography>
       </CardContent>
 
       <CardActions>

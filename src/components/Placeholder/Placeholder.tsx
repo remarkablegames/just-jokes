@@ -1,30 +1,27 @@
+import TextField from '@mui/material/TextField';
 import { getOptions } from 'src/helpers';
 
 interface Props {
   category: string;
   id: string;
-  onChange: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Placeholder(props: Props) {
-  const { category, id, ...restProps } = props;
-  const options = getOptions(category);
+  const options = getOptions(props.category);
 
   return (
     <>
-      <input
-        type="text"
-        className="border text-base rounded-lg p-2.5"
-        list={id}
-        placeholder={category}
-        {...restProps}
+      <TextField
+        inputProps={{ list: props.id }}
+        label={props.category}
+        onChange={props.onChange}
+        size="small"
       />
 
       {options && (
-        <datalist id={id}>
-          {options.map((value: string) => (
+        <datalist id={props.id}>
+          {options.map((value) => (
             <option key={value} value={value}>
               {value}
             </option>
