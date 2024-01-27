@@ -10,3 +10,4 @@ export * from './useSetHost';
 export * from './useSetPlayerActive';
 export * from './useSettings';
 export * from './useSnackbar';
+export * from './useVote';

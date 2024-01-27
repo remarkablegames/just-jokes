@@ -4,4 +4,5 @@ export enum DatabaseKey {
   players = 'players',
   round = 'round',
   settings = 'settings',
+  votes = 'votes',
 }
