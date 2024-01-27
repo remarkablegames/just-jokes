@@ -13,15 +13,23 @@ export default function Players() {
 
   return (
     <List component={Card}>
-      {Object.entries(players).map(([playerId, player]) => (
-        <ListItem key={playerId}>
-          <ListItemIcon>
-            {playerId === host ? <HostIcon /> : <PlayerIcon />}
-          </ListItemIcon>
+      {Object.entries(players).map(([id, player]) => {
+        const color = player.active ? 'inherit' : 'disabled';
 
-          <ListItemText primary={player.nickname} />
-        </ListItem>
-      ))}
+        return (
+          <ListItem key={id}>
+            <ListItemIcon>
+              {id === host ? (
+                <HostIcon color={color} />
+              ) : (
+                <PlayerIcon color={color} />
+              )}
+            </ListItemIcon>
+
+            <ListItemText primary={player.nickname} />
+          </ListItem>
+        );
+      })}
     </List>
   );
 }
