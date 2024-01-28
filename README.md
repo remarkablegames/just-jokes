@@ -13,6 +13,7 @@
 ## Inspiration
 
 - [Cards Against Humanity](https://www.cardsagainsthumanity.com/)
+- [Codenames](https://codenames.game/)
 - [Gartic Phone](https://garticphone.com/)
 - [Jackbox Games](https://www.jackboxgames.com/)
 - [Mad Libs](https://www.madlibs.com/)
