@@ -21,7 +21,7 @@ export default function Round() {
     return <Vote />;
   }
 
-  const { template, placeholders } = getJoke();
+  const { template, placeholders } = getJoke(settings.jokeIds[round - 1]);
 
   return <Joke template={template} placeholders={placeholders} />;
 }

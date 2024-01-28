@@ -22,6 +22,6 @@ export function getJokeIds(count: number) {
  */
 export function getJoke(jokeId?: string) {
   const params = new URLSearchParams(window.location.search);
-  jokeId = params.get('joke_id') || String(random(jokesCount));
+  jokeId = params.get('joke_id') || jokeId || String(random(jokesCount));
   return jokes[jokeId as unknown as keyof typeof jokes];
 }
