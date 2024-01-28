@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useHost, useJoke, usePlayer, useRound, useVote } from 'src/hooks';
 import { playSound } from 'src/sounds';
+import { crowdLaughSound } from 'src/sounds/crowdlaugh';
 
 export default function Vote() {
   const { isHost } = useHost();
@@ -12,11 +13,11 @@ export default function Vote() {
   const { round, setRound } = useRound();
 
   function handleClick() {
-    playSound.confirmation();
     resetPlayers();
     resetJokes();
     resetVotes();
     setRound(round + 1);
+    crowdLaughSound.play();
   }
 
   return (
