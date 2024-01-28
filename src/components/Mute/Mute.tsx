@@ -2,19 +2,19 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import IconButton from '@mui/material/IconButton';
 import { useState } from 'react';
-import { playBackgroundMusic } from 'src/sounds';
+import { backgroundMusic } from 'src/sounds';
 
 export default function Mute() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   function handleClick() {
-    playBackgroundMusic(!isPlaying);
-    setIsPlaying(!isPlaying);
+    backgroundMusic.mute(!isMuted);
+    setIsMuted(!isMuted);
   }
 
   return (
     <IconButton color="inherit" onClick={handleClick}>
-      {isPlaying ? <VolumeUpIcon /> : <VolumeOffIcon />}
+      {isMuted ? <VolumeOffIcon /> : <VolumeUpIcon />}
     </IconButton>
   );
 }

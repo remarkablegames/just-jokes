@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { backgroundMusic } from 'src/sounds';
 
 import { usePlayer } from './usePlayer';
 
@@ -12,7 +13,14 @@ export function useSetPlayerActive() {
     setPlayerActive(true);
 
     function handleVisibilityChange() {
-      setPlayerActive(document.visibilityState !== hidden);
+      const isActive = document.visibilityState !== hidden;
+      setPlayerActive(isActive);
+
+      if (isActive) {
+        backgroundMusic.play();
+      } else {
+        backgroundMusic.pause();
+      }
     }
 
     document.addEventListener(visibilitychange, handleVisibilityChange);
