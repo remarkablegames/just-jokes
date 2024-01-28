@@ -26,7 +26,7 @@ export default function Players() {
   ];
 
   return (
-    <List component={Card}>
+    <List component={Card} sx={{ marginBottom: 2 }}>
       {Object.entries(players).map(([id, player], index) => {
         const iconColor = player.active
           ? playerColors[index % playerColors.length]
