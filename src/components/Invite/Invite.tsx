@@ -11,33 +11,39 @@ export default function Share() {
   }
 
   return (
-    <div className="fixed bottom-2 right-2 lg:bottom-4 lg:right-4">
-      <button
-        onClick={handleClick}
-        title="Invite friends"
-        className="flex items-center opacity-35 hover:opacity-65 focus:active:opacity-100"
-        style={{ background: 'none', border: 'none' }}
-      >
-        <InsertLinkIcon />
-        <span
+    <div
+      className="fixed bottom-2 right-2 lg:bottom-4 lg:right-4"
+      style={{ marginBottom: '20px' }}
+    >
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        <button
+          onClick={handleClick}
+          title="Invite friends"
           style={{
-            fontWeight: 'bold',
-            marginLeft: '8px',
-            lineHeight: '1',
-            verticalAlign: 'middle',
+            background: 'none',
+            border: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
           }}
         >
-          Invite Your Friends!
-        </span>
-      </button>
-      {showCopied && (
-        <span
-          className="ml-2 text-sm"
-          style={{ display: 'inline', marginLeft: '8px' }}
-        >
-          Copied!
-        </span>
-      )}
+          <InsertLinkIcon />
+          <span
+            style={{
+              fontWeight: 'bold',
+              marginLeft: '12px',
+              fontSize: '1.1em',
+            }}
+          >
+            {' '}
+            Invite Your Friends!
+          </span>
+        </button>
+        {showCopied && (
+          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+            Copied!
+          </span>
+        )}
+      </div>
     </div>
   );
 }
