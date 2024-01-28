@@ -6,6 +6,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { setLocalStorageHost } from 'src/helpers';
+import { playSound } from 'src/sounds';
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
           component={Link}
           onClick={() => {
             setLocalStorageHost(true);
+            playSound.confirmation();
           }}
           size="large"
           to="/room"
