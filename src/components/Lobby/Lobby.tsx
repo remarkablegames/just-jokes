@@ -8,6 +8,7 @@ import {
   useSetPlayerActive,
 } from 'src/hooks';
 
+import Share from '../Invite/Invite';
 import Players from '../Players';
 import Settings from '../Settings';
 
@@ -27,6 +28,7 @@ export default function Lobby() {
       <Typography component="h1" paragraph variant="h4">
         Room
       </Typography>
+      <Share />
 
       <Grid container spacing={2}>
         <Grid item xs={4}>
