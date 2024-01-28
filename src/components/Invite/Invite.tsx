@@ -10,14 +10,13 @@ export default function Share() {
     setTimeout(() => setShowCopied(false), 2000);
   }
 
-  const inviteTextStyle = {
+  const textStyle = {
     fontWeight: 'bold',
-    marginLeft: '12px',
     fontSize: '1.1em',
-    color: 'white', // Set text color to white
-    fontFamily: 'Fredoka One, cursive', // Apply the bubbly font
-    letterSpacing: '0.05em', // Slightly spaced letters for the bubbly effect
-    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', // Subtle shadow for depth
+    color: 'white',
+    fontFamily: 'Fredoka One, cursive',
+    letterSpacing: '0.05em',
+    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
   };
 
   return (
@@ -36,12 +35,19 @@ export default function Share() {
             alignItems: 'center',
           }}
         >
-          <InsertLinkIcon style={{ color: 'white' }} />{' '}
-          {/* White color for the icon */}
-          <span style={inviteTextStyle}>Invite Your Friends!</span>
+          <InsertLinkIcon style={{ color: 'white' }} />
+          <span style={{ ...textStyle, marginLeft: '20px' }}>
+            Invite Your Friends!
+          </span>{' '}
         </button>
         {showCopied && (
-          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <span
+            style={{
+              ...textStyle,
+              display: 'inline-flex',
+              alignItems: 'center',
+            }}
+          >
             Copied!
           </span>
         )}

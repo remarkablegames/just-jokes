@@ -23,19 +23,16 @@ export default function Lobby() {
     return null;
   }
 
+  const textStyle = {
+    color: 'white',
+    fontFamily: 'Fredoka One, cursive',
+    letterSpacing: '0.1em',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+  };
+
   return (
     <>
-      <Typography
-        component="h1"
-        paragraph
-        variant="h4"
-        sx={{
-          color: 'white',
-          fontFamily: 'Fredoka One, cursive',
-          letterSpacing: '0.1em',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-        }}
-      >
+      <Typography component="h1" paragraph variant="h4" sx={textStyle}>
         Room
       </Typography>
       <Share />
@@ -53,7 +50,11 @@ export default function Lobby() {
       <br />
 
       <details>
-        <summary>QR Code</summary>
+        <summary>
+          <Typography component="span" sx={textStyle}>
+            QR Code
+          </Typography>
+        </summary>
         <RoomQRCode />
       </details>
     </>
