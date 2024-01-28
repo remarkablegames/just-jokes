@@ -7,6 +7,8 @@ import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import { Link as RouterLink } from 'react-router-dom';
 
+import Mute from '../Mute';
+
 export default function Header() {
   return (
     <AppBar position="static">
@@ -24,6 +26,8 @@ export default function Header() {
               Just Jokes
             </Link>
           </Box>
+
+          <Mute />
 
           <IconButton
             aria-label="Open GitHub repository"
