@@ -1,5 +1,6 @@
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { dropSound } from 'src/sounds';
 
 export default function Share() {
   const [showCopied, setShowCopied] = useState(false);
@@ -7,6 +8,7 @@ export default function Share() {
   function handleClick() {
     navigator.clipboard.writeText(window.location.href);
     setShowCopied(true);
+    dropSound.play();
     setTimeout(() => setShowCopied(false), 2000);
   }
 
@@ -20,10 +22,7 @@ export default function Share() {
   };
 
   return (
-    <div
-      className="fixed bottom-2 right-2 lg:bottom-4 lg:right-4"
-      style={{ marginBottom: '20px' }}
-    >
+    <div style={{ marginBottom: '20px' }}>
       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
         <button
           onClick={handleClick}
@@ -35,11 +34,12 @@ export default function Share() {
             alignItems: 'center',
           }}
         >
-          <InsertLinkIcon style={{ color: 'white' }} />
+          <InsertLinkIcon sx={{ color: 'white' }} />
           <span style={{ ...textStyle, marginLeft: '20px' }}>
             Invite Your Friends!
           </span>{' '}
         </button>
+
         {showCopied && (
           <span
             style={{
