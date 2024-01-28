@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Zoom from '@mui/material/Zoom';
 import Mustache from 'mustache';
 import { useJoke, usePlayer } from 'src/hooks';
+import { playSound } from 'src/sounds';
 
 import Placeholder from '../Placeholder';
 
@@ -85,7 +86,11 @@ export default function Joke(props: Props) {
         <CardContent>{templateNodes}</CardContent>
 
         <CardActions>
-          <Button type="submit" variant="contained">
+          <Button
+            onClick={() => playSound.confirmation()}
+            type="submit"
+            variant="contained"
+          >
             Create Joke
           </Button>
         </CardActions>

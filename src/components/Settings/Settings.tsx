@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { getJokeIds } from 'src/helpers';
 import { useHost, useRound, useSettings } from 'src/hooks';
+import { playSound } from 'src/sounds';
 import {
   type SettingsData,
   SettingsDefaultValue,
@@ -105,7 +106,11 @@ export default function Settings() {
       </CardContent>
 
       <CardActions>
-        <Button type="submit" variant="contained">
+        <Button
+          onClick={() => playSound.confirmation()}
+          type="submit"
+          variant="contained"
+        >
           Start
         </Button>
       </CardActions>

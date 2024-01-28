@@ -4,5 +4,5 @@ import ogg from './confirmation.ogg';
 
 export const confirmationSound = new Howl({
   src: [ogg],
-  volume: 0.5,
+  volume: 0.4,
 });

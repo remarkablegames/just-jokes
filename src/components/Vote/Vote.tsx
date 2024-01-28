@@ -2,6 +2,7 @@ import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useHost, useJoke, usePlayer, useRound, useVote } from 'src/hooks';
+import { playSound } from 'src/sounds';
 
 export default function Vote() {
   const { isHost } = useHost();
@@ -11,6 +12,7 @@ export default function Vote() {
   const { round, setRound } = useRound();
 
   function handleClick() {
+    playSound.confirmation();
     resetPlayers();
     resetJokes();
     resetVotes();
