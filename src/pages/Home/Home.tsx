@@ -49,8 +49,21 @@ export default function Home() {
         </Button>
       </Typography>
 
-      <Card sx={{ margin: '0 auto', maxWidth: 350 }}>
-        <CardHeader sx={{ paddingBottom: 0 }} title="How to play" />
+      <Card
+        sx={{
+          backgroundColor: '#fff475',
+          boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)',
+          fontFamily: '"Permanent Marker", cursive',
+          transform: 'rotate(5deg)',
+          margin: '0 auto',
+          maxWidth: 350,
+          padding: '1em',
+        }}
+      >
+        <CardHeader
+          sx={{ paddingBottom: 0, fontFamily: '"Permanent Marker", cursive' }}
+          title="How to play"
+        />
 
         <CardContent>
           <Typography component="ol" sx={{ textAlign: 'left' }}>

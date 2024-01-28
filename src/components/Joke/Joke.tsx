@@ -64,7 +64,18 @@ export default function Joke(props: Props) {
 
   return (
     <Zoom in>
-      <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
+      <Card
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          backgroundColor: '#e1bee7',
+          border: '1px solid #ddd',
+          boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.1)',
+          fontFamily: 'Arial, sans-serif',
+          padding: 2,
+          borderRadius: '8px',
+        }}
+      >
         <CardHeader
           component="h2"
           sx={{ margin: 0, paddingBottom: 0 }}

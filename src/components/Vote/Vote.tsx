@@ -33,7 +33,16 @@ export default function Vote() {
                 voteJoke(creatorId);
                 setPlayerVoted(true);
               }}
-              sx={{ padding: 1, textTransform: 'none' }}
+              sx={{
+                padding: 1,
+                textTransform: 'none',
+                backgroundColor: 'white',
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                color: 'black',
+                '&:hover': {
+                  backgroundColor: '#f5f5f5',
+                },
+              }}
               variant="outlined"
             >
               {joke}
