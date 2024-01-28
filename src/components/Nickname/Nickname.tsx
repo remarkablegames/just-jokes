@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Dialog from 'src/components/Dialog';
 import { getLocalStorageNickname, setLocalStorageNickname } from 'src/helpers';
 import { usePlayer } from 'src/hooks';
+import { playBackgroundMusic } from 'src/sounds';
 
 export default function Nickname() {
   const [open, setOpen] = useState(true);
@@ -25,9 +26,11 @@ export default function Nickname() {
     if (!nickname) {
       return setError(true);
     }
+
     setPlayerNickname(nickname);
     setLocalStorageNickname(nickname);
     setOpen(false);
+    playBackgroundMusic(true);
   }
 
   return (
