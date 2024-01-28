@@ -2,9 +2,11 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CircularProgress from '@mui/material/CircularProgress';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
-import { useRound, useSettings } from 'src/hooks';
+import Typography from '@mui/material/Typography';
+import { useHost, useRound, useSettings } from 'src/hooks';
 import {
   type SettingsData,
   SettingsDefaultValue,
@@ -16,8 +18,21 @@ const players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function Settings() {
+  const { isHost } = useHost();
   const { setSettings } = useSettings();
   const { setRound } = useRound();
+
+  if (!isHost) {
+    return (
+      <>
+        <Typography paragraph sx={{ fontWeight: 'bold' }}>
+          Waiting for the host to start the game...
+        </Typography>
+
+        <CircularProgress />
+      </>
+    );
+  }
 
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
