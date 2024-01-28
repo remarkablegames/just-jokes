@@ -10,4 +10,9 @@ export enum SettingsDefaultValue {
   timer = 30,
 }
 
-export type SettingsData = Record<keyof typeof SettingsDefaultValue, number>;
+export interface SettingsData {
+  players: number;
+  rounds: number;
+  timer: number;
+  jokeIds: string[];
+}

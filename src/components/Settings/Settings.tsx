@@ -6,6 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { getJokeIds } from 'src/helpers';
 import { useHost, useRound, useSettings } from 'src/hooks';
 import {
   type SettingsData,
@@ -36,13 +37,18 @@ export default function Settings() {
 
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+
     const formData = new FormData(event.target);
-    setSettings(
-      Object.values(SettingsName).reduce((accumulator, value) => {
+    const settings = Object.values(SettingsName).reduce(
+      (accumulator, value) => {
         accumulator[value] = Number(formData.get(value));
         return accumulator;
-      }, {} as SettingsData),
+      },
+      {} as SettingsData,
     );
+    settings.jokeIds = getJokeIds(settings.rounds);
+
+    setSettings(settings);
     setRound(1);
   }
 

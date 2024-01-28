@@ -1,13 +1,27 @@
 import { jokes } from '../data';
+import { random } from './random';
 
-const jokesCount = Object.keys(jokes).length;
+const jokeIds = Object.keys(jokes);
+const jokesCount = jokeIds.length;
 
-export function getJoke(jokeId?: string) {
-  const params = new URLSearchParams(window.location.search);
-  jokeId = params.get('joke_id') || getRandomInt(jokesCount);
-  return jokes[jokeId as unknown as keyof typeof jokes];
+/**
+ * Generate joke ids.
+ *
+ * @param count - Number of joke ids to generate.
+ * @returns - Joke ids.
+ */
+export function getJokeIds(count: number) {
+  return [...Array(count).keys()].map(() => jokeIds[random(jokesCount)]);
 }
 
-function getRandomInt(max: number) {
-  return String(Math.floor(Math.random() * max));
+/**
+ * Get joke.
+ *
+ * @param jokeId - Joke id.
+ * @returns - Joke.
+ */
+export function getJoke(jokeId?: string) {
+  const params = new URLSearchParams(window.location.search);
+  jokeId = params.get('joke_id') || String(random(jokesCount));
+  return jokes[jokeId as unknown as keyof typeof jokes];
 }
