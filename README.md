@@ -4,6 +4,25 @@
 
 😂 [Just Jokes](https://remarkablegames.org/just-jokes/).
 
+## Credits
+
+- [remarkablemark](https://github.com/remarkablemark) - Programmer, UI, Audio
+- [rmacohen](https://github.com/rmacohen) - Programmer, UI, Design
+- [Earth by HoliznaCC0](https://freemusicarchive.org/music/holiznacc0/interstellar-pop-songs/earth/)
+
+## Inspiration
+
+- [Cards Against Humanity](https://www.cardsagainsthumanity.com/)
+- [Gartic Phone](https://garticphone.com/)
+- [Jackbox Games](https://www.jackboxgames.com/)
+- [Mad Libs](https://www.madlibs.com/)
+- [skribbl.io](https://skribbl.io/)
+
+## Ideation
+
+- [Excalidraw](https://excalidraw.com/#json=Kt2uiTnHd7tUlQfiEpjkH,1HjUTR67lPOCu098Lm_uMg)
+- [Prototype](https://replit.com/@remarkablemark/joke-simulator)
+
 ## Stack
 
 - [DriftDB](https://driftdb.com/)
