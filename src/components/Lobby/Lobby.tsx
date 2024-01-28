@@ -25,7 +25,17 @@ export default function Lobby() {
 
   return (
     <>
-      <Typography component="h1" paragraph variant="h4">
+      <Typography
+        component="h1"
+        paragraph
+        variant="h4"
+        sx={{
+          color: 'white',
+          fontFamily: 'Fredoka One, cursive',
+          letterSpacing: '0.1em',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        }}
+      >
         Room
       </Typography>
       <Share />
