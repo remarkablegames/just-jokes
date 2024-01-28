@@ -1,5 +1,5 @@
-import PlayerIcon from '@mui/icons-material/Face';
-import HostIcon from '@mui/icons-material/FaceRetouchingNatural';
+import FaceIcon from '@mui/icons-material/Face';
+import Badge from '@mui/material/Badge';
 import Card from '@mui/material/Card';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -22,11 +22,14 @@ export default function Players() {
         return (
           <ListItem dense key={id}>
             <ListItemIcon>
-              {host === id ? (
-                <HostIcon color={iconColor} />
-              ) : (
-                <PlayerIcon color={iconColor} />
-              )}
+              <Badge
+                badgeContent=" "
+                color="primary"
+                invisible={host !== id}
+                variant="dot"
+              >
+                <FaceIcon color={iconColor} />
+              </Badge>
             </ListItemIcon>
 
             <ListItemText
