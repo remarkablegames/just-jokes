@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
+import Zoom from '@mui/material/Zoom';
 import Mustache from 'mustache';
 import { useJoke, usePlayer } from 'src/hooks';
 
@@ -62,20 +63,22 @@ export default function Joke(props: Props) {
   );
 
   return (
-    <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
-      <CardHeader
-        component="h2"
-        sx={{ margin: 0, paddingBottom: 0 }}
-        title="Write a Joke:"
-      />
+    <Zoom in>
+      <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
+        <CardHeader
+          component="h2"
+          sx={{ margin: 0, paddingBottom: 0 }}
+          title="Write a Joke:"
+        />
 
-      <CardContent>{templateNodes}</CardContent>
+        <CardContent>{templateNodes}</CardContent>
 
-      <CardActions>
-        <Button type="submit" variant="contained">
-          Create Joke
-        </Button>
-      </CardActions>
-    </Card>
+        <CardActions>
+          <Button type="submit" variant="contained">
+            Create Joke
+          </Button>
+        </CardActions>
+      </Card>
+    </Zoom>
   );
 }
