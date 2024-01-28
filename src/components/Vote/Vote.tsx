@@ -34,6 +34,7 @@ export default function Vote() {
               onClick={() => {
                 voteJoke(creatorId);
                 setPlayerVoted(true);
+                playSound.drop();
               }}
               sx={{
                 padding: 1,
