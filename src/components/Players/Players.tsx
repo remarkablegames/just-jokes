@@ -12,10 +12,25 @@ export default function Players() {
   const { players, playerId } = usePlayer();
   const { votes } = useVote();
 
+  const playerColors = [
+    '#FF5733',
+    '#33FF57',
+    '#3357FF',
+    '#FF33F1',
+    '#57FF33',
+    '#FF5733',
+    '#33D4FF',
+    '#FFD433',
+    '#FF3380',
+    '#8333FF',
+  ];
+
   return (
     <List component={Card}>
-      {Object.entries(players).map(([id, player]) => {
-        const iconColor = player.active ? 'inherit' : 'disabled';
+      {Object.entries(players).map(([id, player], index) => {
+        const iconColor = player.active
+          ? playerColors[index % playerColors.length]
+          : 'disabled';
         const textProps =
           playerId === id ? { sx: { fontWeight: 'bold' } } : undefined;
 
@@ -28,7 +43,7 @@ export default function Players() {
                 invisible={host !== id}
                 variant="dot"
               >
-                <FaceIcon color={iconColor} />
+                <FaceIcon style={{ color: iconColor }} />
               </Badge>
             </ListItemIcon>
 
