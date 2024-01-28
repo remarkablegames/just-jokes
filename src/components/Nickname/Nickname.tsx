@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Dialog from 'src/components/Dialog';
 import { getLocalStorageNickname, setLocalStorageNickname } from 'src/helpers';
 import { usePlayer } from 'src/hooks';
-import { backgroundMusic, clickSound, confirmationSound } from 'src/sounds';
+import { backgroundMusic, playSound } from 'src/sounds';
 
 export default function Nickname() {
   const [open, setOpen] = useState(true);
@@ -24,14 +24,14 @@ export default function Nickname() {
 
   function handleSave() {
     if (!nickname) {
-      clickSound.play();
+      playSound.click();
       return setError(true);
     }
 
     setPlayerNickname(nickname);
     setLocalStorageNickname(nickname);
     setOpen(false);
-    confirmationSound.play();
+    playSound.confirmation();
     backgroundMusic.play();
   }
 

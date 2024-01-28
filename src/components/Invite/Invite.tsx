@@ -1,6 +1,6 @@
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { useState } from 'react';
-import { dropSound } from 'src/sounds';
+import { playSound } from 'src/sounds';
 
 export default function Share() {
   const [showCopied, setShowCopied] = useState(false);
@@ -8,7 +8,7 @@ export default function Share() {
   function handleClick() {
     navigator.clipboard.writeText(window.location.href);
     setShowCopied(true);
-    dropSound.play();
+    playSound.drop();
     setTimeout(() => setShowCopied(false), 2000);
   }
 
