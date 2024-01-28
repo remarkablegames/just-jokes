@@ -87,7 +87,7 @@ export default function Joke(props: Props) {
 
         <CardActions>
           <Button
-            onClick={() => playSound.confirmation()}
+            onClick={playSound.confirmation}
             type="submit"
             variant="contained"
           >

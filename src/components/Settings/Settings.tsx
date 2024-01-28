@@ -61,6 +61,7 @@ export default function Settings() {
           helperText="Number of players"
           label="Players"
           name={SettingsName.players}
+          onClick={playSound.select}
           select
         >
           {players.map((value) => (
@@ -78,6 +79,7 @@ export default function Settings() {
           helperText="Number of rounds"
           label="Rounds"
           name={SettingsName.rounds}
+          onClick={playSound.select}
           select
         >
           {rounds.map((value) => (
@@ -95,6 +97,7 @@ export default function Settings() {
           helperText="Seconds per round"
           label="Timer"
           name={SettingsName.timer}
+          onClick={playSound.select}
           select
         >
           {seconds.map((value) => (
@@ -107,7 +110,7 @@ export default function Settings() {
 
       <CardActions>
         <Button
-          onClick={() => playSound.confirmation()}
+          onClick={playSound.confirmation}
           type="submit"
           variant="contained"
         >
