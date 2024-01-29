@@ -7,34 +7,16 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { setLocalStorageHost } from 'src/helpers';
 import { playSound } from 'src/sounds';
+import { textStyle } from 'src/styles';
 
 export default function Home() {
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography
-        component="h1"
-        paragraph
-        variant="h2"
-        sx={{
-          color: 'white',
-          fontFamily: 'Fredoka One, cursive',
-          letterSpacing: '0.1em',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
-        }}
-      >
+      <Typography component="h1" paragraph variant="h2" sx={textStyle}>
         Just Jokes
       </Typography>
 
-      <Typography
-        paragraph
-        variant="h5"
-        sx={{
-          color: 'white',
-          fontFamily: 'Fredoka One, cursive',
-          letterSpacing: '0.05em',
-          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.9)',
-        }}
-      >
+      <Typography paragraph variant="h5" sx={textStyle}>
         Play with your friends
       </Typography>
 

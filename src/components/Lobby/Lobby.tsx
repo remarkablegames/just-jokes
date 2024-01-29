@@ -7,6 +7,7 @@ import {
   useSetHost,
   useSetPlayerActive,
 } from 'src/hooks';
+import { textStyle } from 'src/styles';
 
 import Heading from '../Heading';
 import Invite from '../Invite';
@@ -23,13 +24,6 @@ export default function Lobby() {
   if (round) {
     return null;
   }
-
-  const textStyle = {
-    color: 'white',
-    fontFamily: 'Fredoka One, cursive',
-    letterSpacing: '0.1em',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
-  };
 
   return (
     <>

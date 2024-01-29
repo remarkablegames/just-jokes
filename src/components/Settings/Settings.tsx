@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { getJokeIds } from 'src/helpers';
 import { useHost, useRound, useSettings } from 'src/hooks';
 import { playSound } from 'src/sounds';
+import { textStyle } from 'src/styles';
 import {
   type SettingsData,
   SettingsDefaultValue,
@@ -27,7 +28,7 @@ export default function Settings() {
   if (!isHost) {
     return (
       <>
-        <Typography paragraph sx={{ fontWeight: 'bold' }}>
+        <Typography paragraph sx={textStyle}>
           Waiting for the host to start the game...
         </Typography>
 

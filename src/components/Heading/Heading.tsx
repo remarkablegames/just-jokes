@@ -1,4 +1,5 @@
 import Typography from '@mui/material/Typography';
+import { textStyle } from 'src/styles';
 
 interface Props {
   children: React.ReactNode;
@@ -6,17 +7,7 @@ interface Props {
 
 export default function Heading(props: Props) {
   return (
-    <Typography
-      component="h1"
-      paragraph
-      variant="h4"
-      sx={{
-        color: 'white',
-        fontFamily: 'Fredoka One, cursive',
-        letterSpacing: '0.1em',
-        textShadow: '4px 4px 4px rgba(0, 0, 0, 1.0)',
-      }}
-    >
+    <Typography component="h1" paragraph variant="h4" sx={textStyle}>
       {props.children}
     </Typography>
   );

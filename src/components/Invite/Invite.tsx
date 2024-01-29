@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { playSound } from 'src/sounds';
+import { textStyle } from 'src/styles';
 
 export default function Share() {
   const [showCopied, setShowCopied] = useState(false);
@@ -32,11 +33,8 @@ export default function Share() {
         <Box
           component="span"
           sx={{
-            color: 'white',
-            fontFamily: 'Fredoka One, cursive',
-            letterSpacing: 1,
+            ...textStyle,
             marginLeft: 1,
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)',
           }}
         >
           Copied!
