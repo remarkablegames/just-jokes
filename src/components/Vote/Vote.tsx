@@ -16,6 +16,7 @@ export default function Vote() {
     resetJokes();
     resetVotes();
     setRound(round + 1);
+    playSound.crowdLaugh();
   }
 
   return (
