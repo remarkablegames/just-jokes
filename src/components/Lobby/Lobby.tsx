@@ -30,12 +30,12 @@ export default function Lobby() {
       <Heading>Room</Heading>
 
       <Grid container spacing={2}>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Players />
           <Invite />
         </Grid>
 
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={8}>
           <Settings />
         </Grid>
       </Grid>
