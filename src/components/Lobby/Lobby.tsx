@@ -1,5 +1,7 @@
 import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { RoomQRCode } from 'driftdb-react';
 import {
   useDebugDatabase,
@@ -19,6 +21,8 @@ export default function Lobby() {
   useSetHost();
   useSetPlayerActive();
 
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
   const { round } = useRound();
 
   if (round) {
@@ -29,7 +33,11 @@ export default function Lobby() {
     <>
       <Heading>Room</Heading>
 
-      <Grid container spacing={2}>
+      <Grid
+        container
+        direction={isSmall ? 'column-reverse' : 'row'}
+        spacing={2}
+      >
         <Grid item xs={12} sm={4}>
           <Players />
           <Invite />
