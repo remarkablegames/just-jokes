@@ -1,8 +1,18 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/remarkablegames/just-jokes/master/public/screenshots/home.png" alt="Just Jokes">
+</p>
+
 # just-jokes
 
 [![build](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml)
 
-😂 [Just Jokes](https://remarkablegames.org/just-jokes/) is party game made for the [Global Game Jam 2024](https://globalgamejam.org/games/2024/just-jokes-1), in which the theme is "Make Me Laugh".
+😂 [Just Jokes](https://remarkablegames.org/just-jokes/) is party game where you make jokes with your friends.
+
+The game was made for the [Global Game Jam 2024](https://globalgamejam.org/games/2024/just-jokes-1), in which the theme was "Make Me Laugh".
+
+Play the game on:
+
+- [remarkablegames](https://remarkablegames.org/just-jokes/)
 
 ## Credits
 
