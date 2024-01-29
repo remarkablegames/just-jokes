@@ -19,7 +19,7 @@ export default function Home() {
           color: 'white',
           fontFamily: 'Fredoka One, cursive',
           letterSpacing: '0.1em',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
         }}
       >
         Just Jokes
@@ -32,7 +32,7 @@ export default function Home() {
           color: 'white',
           fontFamily: 'Fredoka One, cursive',
           letterSpacing: '0.05em',
-          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.9)',
         }}
       >
         Play with your friends

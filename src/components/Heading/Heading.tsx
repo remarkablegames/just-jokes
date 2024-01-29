@@ -14,7 +14,7 @@ export default function Heading(props: Props) {
         color: 'white',
         fontFamily: 'Fredoka One, cursive',
         letterSpacing: '0.1em',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        textShadow: '4px 4px 4px rgba(0, 0, 0, 1.0)',
       }}
     >
       {props.children}

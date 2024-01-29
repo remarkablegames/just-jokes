@@ -28,7 +28,7 @@ export default function Lobby() {
     color: 'white',
     fontFamily: 'Fredoka One, cursive',
     letterSpacing: '0.1em',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)',
   };
 
   return (
