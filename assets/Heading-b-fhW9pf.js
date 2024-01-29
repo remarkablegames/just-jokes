@@ -1,1 +1,0 @@
-import{j as e,T as a}from"./index-optrmIer.js";function n(r){return e.jsx(a,{component:"h1",paragraph:!0,variant:"h4",sx:{color:"white",fontFamily:"Fredoka One, cursive",letterSpacing:"0.1em",textShadow:"4px 4px 4px rgba(0, 0, 0, 1.0)"},children:r.children})}export{n as H};
