@@ -1,0 +1,1 @@
+import{j as e,T as a}from"./index-o-PaoeS8.js";function n(r){return e.jsx(a,{component:"h1",paragraph:!0,variant:"h4",sx:{color:"white",fontFamily:"Fredoka One, cursive",letterSpacing:"0.1em",textShadow:"2px 2px 4px rgba(0, 0, 0, 0.5)"},children:r.children})}export{n as H};
