@@ -1,6 +1,7 @@
 enum LocalStorageKey {
   host = 'host',
   nickname = 'nickname',
+  round = 'round',
 }
 
 const TRUE = 'true';
@@ -23,4 +24,12 @@ export function getLocalStorageNickname(): string {
 
 export function setLocalStorageNickname(nickname: string): void {
   localStorage.setItem(LocalStorageKey.nickname, nickname);
+}
+
+export function getLocalStorageRound(): number {
+  return Number(localStorage.getItem(LocalStorageKey.round));
+}
+
+export function setLocalStorageRound(round: number): void {
+  localStorage.setItem(LocalStorageKey.round, String(round));
 }
