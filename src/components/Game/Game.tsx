@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { useRound } from 'src/hooks';
 
+import Heading from '../Heading';
 import Invite from '../Invite';
 import Players from '../Players';
 import Round from '../Round';
@@ -15,9 +15,7 @@ export default function Game() {
 
   return (
     <>
-      <Typography component="h1" paragraph variant="h4">
-        Round {round}
-      </Typography>
+      <Heading>Round {round}</Heading>
 
       <Grid container spacing={2}>
         <Grid item xs={4}>

@@ -3,6 +3,7 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { Link as RouterLink, useRouteError } from 'react-router-dom';
+import Heading from 'src/components/Heading';
 import { useSetDocumentTitle } from 'src/hooks';
 
 export default function ErrorBoundary() {
@@ -13,9 +14,7 @@ export default function ErrorBoundary() {
 
   return (
     <>
-      <Typography component="h1" paragraph variant="h4">
-        Error
-      </Typography>
+      <Heading>Error</Heading>
 
       <Alert severity="error">
         <AlertTitle>Unexpected Application Error</AlertTitle>
