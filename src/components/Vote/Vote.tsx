@@ -49,7 +49,7 @@ export default function Vote() {
               }}
               variant="outlined"
             >
-              {joke}
+              <span dangerouslySetInnerHTML={{ __html: joke }} />
             </Button>
           </Badge>
         ))}
