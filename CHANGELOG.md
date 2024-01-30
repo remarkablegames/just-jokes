@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/remarkablegames/just-jokes/compare/v1.0.1...v1.0.2) (2024-01-30)
+
+
+### Bug Fixes
+
+* **index:** add og:image ([acf95d6](https://github.com/remarkablegames/just-jokes/commit/acf95d6d55e0d7822f728d6a069b64825332d17d))
+* **index:** add twitter:image ([7067b23](https://github.com/remarkablegames/just-jokes/commit/7067b23587e84f611d0ee6ff3befe53d62c3d81d))
+* **index:** use absolute url for og:image and twitter:image ([481b46a](https://github.com/remarkablegames/just-jokes/commit/481b46a009ba8a23b757bbe908e8412036593847))
+
 ## [1.0.1](https://github.com/remarkablegames/just-jokes/compare/v1.0.0...v1.0.1) (2024-01-30)
 
 
