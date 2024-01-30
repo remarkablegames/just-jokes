@@ -8,7 +8,7 @@
 
 😂 [Just Jokes](https://remarkablegames.org/just-jokes/) is party game where you make jokes with your friends.
 
-The game was made for the [Global Game Jam 2024](https://globalgamejam.org/games/2024/just-jokes-1), in which the theme was "Make Me Laugh".
+The game was made for the [Global Game Jam 2024](https://globalgamejam.org/games/2024/just-jokes-1), in which the theme was "Make Me Laugh." Read the [blog post](https://remarkablegames.org/posts/just-jokes/).
 
 Play the game on:
 
