@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/remarkablegames/just-jokes/compare/v1.0.2...v1.0.3) (2024-01-30)
+
+
+### Bug Fixes
+
+* **components:** render Skeleton in Players if nickname is empty ([2e29c52](https://github.com/remarkablegames/just-jokes/commit/2e29c529d414948bc546f1be00971c66c3754d8c))
+
 ## [1.0.2](https://github.com/remarkablegames/just-jokes/compare/v1.0.1...v1.0.2) (2024-01-30)
 
 
