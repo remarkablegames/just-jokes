@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/remarkablegames/just-jokes/compare/v1.0.0...v1.0.1) (2024-01-30)
+
+
+### Bug Fixes
+
+* **components:** make Game and Lobby mobile friendly ([e2972b7](https://github.com/remarkablegames/just-jokes/commit/e2972b7887eec870a173db417cef2c19066eb888))
+* **components:** reverse the column order in small screens ([134a1f0](https://github.com/remarkablegames/just-jokes/commit/134a1f011e2adb61004bf1e31e800c8f91a6b9b6))
+* **index:** add background-color and remove background no-repeat ([525c589](https://github.com/remarkablegames/just-jokes/commit/525c5894fa7528433094e181c04d986a93bf5f38))
+* **sounds:** lower crowdLaugh volume ([93845ab](https://github.com/remarkablegames/just-jokes/commit/93845ab2603f351b17b5b1b48d3795279f64487e))
+
 ## 1.0.0 (2024-01-29)
 
 
