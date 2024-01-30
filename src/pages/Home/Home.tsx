@@ -40,7 +40,7 @@ export default function Home() {
           backgroundColor: '#fff475',
           boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)',
           fontFamily: '"Permanent Marker", cursive',
-          transform: 'rotate(3deg)',
+          transform: 'rotate(2deg)',
           margin: '0 auto',
           maxWidth: 350,
           padding: '1em',
@@ -54,7 +54,10 @@ export default function Home() {
         <CardContent>
           <Typography component="ol" sx={{ textAlign: 'left' }}>
             <Typography component="li">
-              Click the <strong>CREATE ROOM</strong> button
+              Click{' '}
+              <Box component="strong" sx={{ textTransform: 'uppercase' }}>
+                Create Room
+              </Box>
             </Typography>
             <Typography component="li">
               Select the settings and start the game
