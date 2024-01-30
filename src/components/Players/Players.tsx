@@ -5,6 +5,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Skeleton from '@mui/material/Skeleton';
 import { useHost, usePlayer, useVote } from 'src/hooks';
 
 const playerColors = [
@@ -50,7 +51,7 @@ export default function Players() {
             </ListItemIcon>
 
             <ListItemText
-              primary={player.nickname}
+              primary={player.nickname || <Skeleton />}
               primaryTypographyProps={textProps}
             />
 
