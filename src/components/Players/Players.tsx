@@ -7,30 +7,32 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { useHost, usePlayer, useVote } from 'src/hooks';
 
+const playerColors = [
+  '#FF5733',
+  '#33FF57',
+  '#3357FF',
+  '#FF33F1',
+  '#57FF33',
+  '#FF5733',
+  '#33D4FF',
+  '#FFD433',
+  '#FF3380',
+  '#8333FF',
+];
+
+function getPlayerColor(index: number) {
+  return playerColors[index % playerColors.length];
+}
+
 export default function Players() {
   const { host } = useHost();
   const { players, playerId } = usePlayer();
   const { votes } = useVote();
 
-  const playerColors = [
-    '#FF5733',
-    '#33FF57',
-    '#3357FF',
-    '#FF33F1',
-    '#57FF33',
-    '#FF5733',
-    '#33D4FF',
-    '#FFD433',
-    '#FF3380',
-    '#8333FF',
-  ];
-
   return (
     <List component={Card} sx={{ marginBottom: 2 }}>
       {Object.entries(players).map(([id, player], index) => {
-        const iconColor = player.active
-          ? playerColors[index % playerColors.length]
-          : 'disabled';
+        const iconColor = player.active ? getPlayerColor(index) : 'disabled';
         const textProps =
           playerId === id ? { sx: { fontWeight: 'bold' } } : undefined;
 
