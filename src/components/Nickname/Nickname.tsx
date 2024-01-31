@@ -32,7 +32,7 @@ export default function Nickname() {
     setLocalStorageNickname(nickname);
     setOpen(false);
     playSound.confirmation();
-    backgroundMusic.play();
+    backgroundMusic.stop().play();
   }
 
   return (
