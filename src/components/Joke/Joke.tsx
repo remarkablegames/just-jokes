@@ -77,6 +77,15 @@ export default function Joke(props: Props) {
 
         <CardContent>{templateNodes}</CardContent>
 
+        <CardContent>
+          <strong>Preview: </strong>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: Mustache.render(props.template, placeholders),
+            }}
+          />
+        </CardContent>
+
         <CardActions>
           <Button
             onClick={playSound.confirmation}
