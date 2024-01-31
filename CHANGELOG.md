@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/remarkablegames/just-jokes/compare/v1.0.5...v1.0.6) (2024-01-31)
+
+
+### Bug Fixes
+
+* **pages:** apply textStyle to NotFound ([393f095](https://github.com/remarkablegames/just-jokes/commit/393f09572140706676079fb44f9d8c414d86d480))
+
 ## [1.0.5](https://github.com/remarkablegames/just-jokes/compare/v1.0.4...v1.0.5) (2024-01-31)
 
 
