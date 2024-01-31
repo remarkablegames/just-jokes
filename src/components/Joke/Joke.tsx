@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Zoom from '@mui/material/Zoom';
 import Mustache from 'mustache';
 import { useState } from 'react';
+import { useCallback } from 'react';
 import { useJoke, usePlayer } from 'src/hooks';
 import { playSound } from 'src/sounds';
 
@@ -23,14 +24,26 @@ export default function Joke(props: Props) {
   const { setJoke } = useJoke();
   const [placeholders, setPlaceholders] = useState<Props['placeholders']>({});
 
-  function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const onSubmit = useCallback(
+    (event: React.ChangeEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      setJoke({
+        creatorId: playerId,
+        joke: Mustache.render(props.template, placeholders),
+      });
+    },
+    [playerId, placeholders, props.template, setJoke],
+  );
 
-    setJoke({
-      creatorId: playerId,
-      joke: Mustache.render(props.template, placeholders),
-    });
-  }
+  const onChange = useCallback(
+    (id: string, value: string | null) => {
+      setPlaceholders((placeholders) => ({
+        ...placeholders,
+        [id]: value || '',
+      }));
+    },
+    [setPlaceholders],
+  );
 
   const templateNodes = Mustache.parse(props.template).map(
     ([type, text], index) => {
@@ -46,13 +59,9 @@ export default function Joke(props: Props) {
           return (
             <Placeholder
               category={props.placeholders[text]}
+              id={text}
               key={text}
-              onChange={(event, value) => {
-                setPlaceholders({
-                  ...placeholders,
-                  [text]: typeof value === 'string' ? value : '',
-                });
-              }}
+              onChange={onChange}
               value={placeholders[text] || ''}
             />
           );
@@ -64,7 +73,7 @@ export default function Joke(props: Props) {
     <Zoom in>
       <Card
         component="form"
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         sx={{
           padding: 2,
           borderRadius: 2,

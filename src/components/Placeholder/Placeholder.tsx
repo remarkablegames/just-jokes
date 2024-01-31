@@ -8,6 +8,7 @@ import { playSound } from 'src/sounds';
 
 interface Props {
   category: string;
+  id: string;
   onChange: (category: string, value: string | null) => void;
   value: string;
 }
@@ -15,11 +16,11 @@ interface Props {
 export default function Placeholder(props: Props) {
   const options = getOptions(props.category)?.map((option) => option) || [];
 
-  const onChange = useCallback(
+  const onInputChange = useCallback(
     (event: unknown, value: string | null) => {
-      props.onChange(props.category, value);
+      props.onChange(props.id, value);
     },
-    [props.category, props.onChange],
+    [props.id, props.onChange],
   );
 
   const renderInput = useCallback((params: AutocompleteRenderInputParams) => {
@@ -30,8 +31,7 @@ export default function Placeholder(props: Props) {
     <Autocomplete
       freeSolo
       inputValue={props.value}
-      onChange={onChange}
-      onInputChange={onChange}
+      onInputChange={onInputChange}
       options={options}
       renderInput={renderInput}
       size="small"
