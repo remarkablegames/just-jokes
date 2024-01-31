@@ -1,3 +1,4 @@
+import SmileIcon from '@mui/icons-material/AddReactionRounded';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -88,6 +89,7 @@ export default function Joke(props: Props) {
 
         <CardActions>
           <Button
+            endIcon={<SmileIcon />}
             onClick={playSound.confirmation}
             type="submit"
             variant="contained"
