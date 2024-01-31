@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/remarkablegames/just-jokes/compare/v1.0.3...v1.0.4) (2024-01-31)
+
+
+### Bug Fixes
+
+* **hooks:** remove player on beforeunload event ([56e1bd4](https://github.com/remarkablegames/just-jokes/commit/56e1bd4819c26fd3119a6e9d0d4bf6eb8cee52d1))
+
 ## [1.0.3](https://github.com/remarkablegames/just-jokes/compare/v1.0.2...v1.0.3) (2024-01-30)
 
 
