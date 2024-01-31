@@ -17,6 +17,7 @@ interface ActionPayload {
 enum ActionType {
   active = 'active',
   nickname = 'nickname',
+  remove = 'remove',
   reset = 'reset',
   voted = 'voted',
 }
@@ -58,6 +59,10 @@ export function usePlayer() {
           player.voted = payload.voted!;
           break;
 
+        case ActionType.remove:
+          state[payload.playerId] = initialPlayerState;
+          break;
+
         case ActionType.reset:
           Object.keys(state).forEach((id) => {
             state[id].voted = false;
@@ -95,6 +100,12 @@ export function usePlayer() {
       dispatch({
         type: ActionType.voted,
         payload: { playerId, voted },
+      }),
+
+    removePlayer: () =>
+      dispatch({
+        type: ActionType.remove,
+        payload: { playerId },
       }),
 
     resetPlayers: () =>

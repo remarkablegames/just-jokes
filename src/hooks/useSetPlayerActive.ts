@@ -1,19 +1,27 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { backgroundMusic } from 'src/sounds';
 
 import { usePlayer } from './usePlayer';
 
-const visibilitychange = 'visibilitychange';
-const hidden = 'hidden';
+enum Event {
+  beforeunload = 'beforeunload',
+  visibilitychange = 'visibilitychange',
+}
+
+enum VisibilityState {
+  hidden = 'hidden',
+}
 
 export function useSetPlayerActive() {
-  const { setPlayerActive } = usePlayer();
+  const navigate = useNavigate();
+  const { setPlayerActive, removePlayer } = usePlayer();
 
   useEffect(() => {
     setPlayerActive(true);
 
-    function handleVisibilityChange() {
-      const isActive = document.visibilityState !== hidden;
+    function onVisibilityChange() {
+      const isActive = document.visibilityState !== VisibilityState.hidden;
       setPlayerActive(isActive);
 
       if (isActive) {
@@ -23,10 +31,21 @@ export function useSetPlayerActive() {
       }
     }
 
-    document.addEventListener(visibilitychange, handleVisibilityChange);
+    document.addEventListener(Event.visibilitychange, onVisibilityChange);
+
+    function onBeforeUnload(event: BeforeUnloadEvent) {
+      event.preventDefault();
+      event.returnValue = true;
+      backgroundMusic.pause();
+      removePlayer();
+      navigate('/');
+    }
+
+    window.addEventListener(Event.beforeunload, onBeforeUnload);
 
     return function unsubscribe() {
-      document.removeEventListener(visibilitychange, handleVisibilityChange);
+      document.removeEventListener(Event.visibilitychange, onVisibilityChange);
+      document.removeEventListener(Event.beforeunload, onBeforeUnload);
     };
   }, []);
 }
