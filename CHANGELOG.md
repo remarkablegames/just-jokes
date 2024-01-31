@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.5](https://github.com/remarkablegames/just-jokes/compare/v1.0.4...v1.0.5) (2024-01-31)
+
+
+### Bug Fixes
+
+* **components:** render joke preview ([acbd725](https://github.com/remarkablegames/just-jokes/commit/acbd7258b1a12b8a74225fd778e888360685b9e1))
+* **components:** stop and play background music in Nickname ([85b8a92](https://github.com/remarkablegames/just-jokes/commit/85b8a9266fc1a54579ab00c8bdda8a82faa08829))
+
+
+### Performance Improvements
+
+* **components:** optimize with useCallback in Joke ([eb40355](https://github.com/remarkablegames/just-jokes/commit/eb40355a756626bc75b60aa11dd3304338bba267))
+* **components:** optimize with useCallback in Placeholder ([546e6b3](https://github.com/remarkablegames/just-jokes/commit/546e6b32e3e062217080ed75283740eef1e84095))
+
 ## [1.0.4](https://github.com/remarkablegames/just-jokes/compare/v1.0.3...v1.0.4) (2024-01-31)
 
 
