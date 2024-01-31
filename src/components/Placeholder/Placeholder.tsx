@@ -5,7 +5,8 @@ import { playSound } from 'src/sounds';
 
 interface Props {
   category: string;
-  name: string;
+  onChange: (event: unknown, value: string | null) => void;
+  value: string;
 }
 
 export default function Placeholder(props: Props) {
@@ -14,14 +15,12 @@ export default function Placeholder(props: Props) {
   return (
     <Autocomplete
       freeSolo
+      inputValue={props.value}
+      onChange={props.onChange}
+      onInputChange={props.onChange}
       options={options}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label={props.category}
-          name={props.name}
-          onClick={playSound.select}
-        />
+        <TextField {...params} onClick={playSound.select} />
       )}
       size="small"
     />

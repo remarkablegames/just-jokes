@@ -6,6 +6,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import Zoom from '@mui/material/Zoom';
 import Mustache from 'mustache';
+import { useState } from 'react';
 import { useJoke, usePlayer } from 'src/hooks';
 import { playSound } from 'src/sounds';
 
@@ -19,25 +20,14 @@ interface Props {
 export default function Joke(props: Props) {
   const { playerId } = usePlayer();
   const { setJoke } = useJoke();
+  const [placeholders, setPlaceholders] = useState<Props['placeholders']>({});
 
   function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.keys(props.placeholders).reduce(
-      (accumulator, value) => {
-        const text = formData.get(value);
-        if (typeof text === 'string') {
-          accumulator[value] = text;
-        }
-        return accumulator;
-      },
-      {} as Props['placeholders'],
-    );
-
     setJoke({
       creatorId: playerId,
-      joke: Mustache.render(props.template, data),
+      joke: Mustache.render(props.template, placeholders),
     });
   }
 
@@ -56,7 +46,13 @@ export default function Joke(props: Props) {
             <Placeholder
               category={props.placeholders[text]}
               key={text}
-              name={text}
+              onChange={(event, value) => {
+                setPlaceholders({
+                  ...placeholders,
+                  [text]: typeof value === 'string' ? value : '',
+                });
+              }}
+              value={placeholders[text] || ''}
             />
           );
       }
@@ -76,7 +72,7 @@ export default function Joke(props: Props) {
         <CardHeader
           component="h2"
           sx={{ margin: 0, paddingBottom: 0 }}
-          title="Write a Joke:"
+          title="Create a Joke:"
         />
 
         <CardContent>{templateNodes}</CardContent>
