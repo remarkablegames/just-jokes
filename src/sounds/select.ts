@@ -4,4 +4,5 @@ import ogg from './select.ogg';
 
 export const selectSound = new Howl({
   src: [ogg],
+  preload: false,
 });

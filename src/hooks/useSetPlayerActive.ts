@@ -25,7 +25,7 @@ export function useSetPlayerActive() {
       setPlayerActive(isActive);
 
       if (isActive) {
-        backgroundMusic.play();
+        backgroundMusic.load().play();
       } else {
         backgroundMusic.pause();
       }
