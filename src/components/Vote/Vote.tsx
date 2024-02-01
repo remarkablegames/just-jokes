@@ -2,19 +2,24 @@ import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useHost, useJoke, usePlayer, useRound, useVote } from 'src/hooks';
+import { useDispatch, useSelector } from 'src/hooks';
 import { playSound } from 'src/sounds';
+import { actions } from 'src/store';
 
 export default function Vote() {
   const { isHost } = useHost();
   const { jokes, resetJokes } = useJoke();
   const { votes, voteJoke, resetVotes } = useVote();
-  const { player, setPlayerVoted, resetPlayers } = usePlayer();
+  const { resetPlayer } = usePlayer();
   const { round, setRound } = useRound();
 
-  function handleClick() {
-    resetPlayers();
+  const dispatch = useDispatch();
+  const hasVoted = useSelector((state) => state.user.hasVoted);
+
+  function onNextRound() {
     resetJokes();
     resetVotes();
+    resetPlayer();
     setRound(round + 1);
     playSound.crowdLaugh();
   }
@@ -29,11 +34,11 @@ export default function Vote() {
             key={creatorId}
           >
             <Button
-              disabled={player.voted}
+              disabled={hasVoted}
               fullWidth
               onClick={() => {
+                dispatch(actions.setUser({ hasVoted: true }));
                 voteJoke(creatorId);
-                setPlayerVoted(true);
                 playSound.drop();
               }}
               sx={{
@@ -57,7 +62,7 @@ export default function Vote() {
       <br />
 
       {isHost && (
-        <Button onClick={handleClick} variant="contained">
+        <Button onClick={onNextRound} variant="contained">
           Next Round
         </Button>
       )}
