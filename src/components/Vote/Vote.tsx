@@ -21,6 +21,7 @@ export default function Vote() {
     resetVotes();
     resetPlayer();
     setRound(round + 1);
+    playSound.crowdLaugh();
   }
 
   return (
