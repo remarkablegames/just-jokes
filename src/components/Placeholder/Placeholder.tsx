@@ -23,9 +23,18 @@ export default function Placeholder(props: Props) {
     [props.id, props.onChange],
   );
 
-  const renderInput = useCallback((params: AutocompleteRenderInputParams) => {
-    return <TextField {...params} onClick={playSound.select} />;
-  }, []);
+  const renderInput = useCallback(
+    (params: AutocompleteRenderInputParams) => {
+      return (
+        <TextField
+          {...params}
+          label={props.category}
+          onClick={playSound.select}
+        />
+      );
+    },
+    [props.category],
+  );
 
   return (
     <Autocomplete
