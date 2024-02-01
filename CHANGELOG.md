@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.7](https://github.com/remarkablegames/just-jokes/compare/v1.0.6...v1.0.7) (2024-02-01)
+
+
+### Bug Fixes
+
+* **pages:** use textStyle in ErrorBoundary ([32dcad6](https://github.com/remarkablegames/just-jokes/commit/32dcad6f9d7ddae44d5c4d530d3344061e27c4d0))
+* play laugh track to all players on round end ([ff88f46](https://github.com/remarkablegames/just-jokes/commit/ff88f46d87919af87e15fc9a287e7296cbcbe06a))
+
+
+### Performance Improvements
+
+* **sounds:** don't preload sounds and load when played ([c333364](https://github.com/remarkablegames/just-jokes/commit/c333364c91ac7285bba8886eaa2b13db61baa938))
+
 ## [1.0.6](https://github.com/remarkablegames/just-jokes/compare/v1.0.5...v1.0.6) (2024-01-31)
 
 
