@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { Link as RouterLink, useRouteError } from 'react-router-dom';
 import Heading from 'src/components/Heading';
 import { useSetDocumentTitle } from 'src/hooks';
+import { textStyle } from 'src/styles';
 
 export default function ErrorBoundary() {
   useSetDocumentTitle('Error');
@@ -25,9 +26,9 @@ export default function ErrorBoundary() {
 
       <br />
 
-      <Typography paragraph>
+      <Typography paragraph sx={textStyle}>
         Refresh the page or go to{' '}
-        <Link component={RouterLink} to="/">
+        <Link component={RouterLink} to="/" sx={textStyle}>
           home
         </Link>
         .
