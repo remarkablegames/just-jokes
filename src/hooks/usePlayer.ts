@@ -1,6 +1,7 @@
 import { useSharedReducer, useUniqueClientId } from 'driftdb-react';
 import { useState } from 'react';
 import { useDispatch } from 'src/hooks';
+import { playSound } from 'src/sounds';
 import { actions } from 'src/store';
 import { DatabaseKey } from 'src/types';
 
@@ -60,6 +61,7 @@ export function usePlayer() {
           break;
 
         case ActionType.reset:
+          playSound.crowdLaugh();
           dispatchRedux(actions.setUser({ hasVoted: false }));
           break;
       }
