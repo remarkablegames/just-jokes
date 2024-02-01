@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/remarkablegames/just-jokes/compare/v1.0.7...v1.0.8) (2024-02-01)
+
+
+### Bug Fixes
+
+* **components:** add missing label to Placeholder input ([f667707](https://github.com/remarkablegames/just-jokes/commit/f6677076ac44a71fcc6bb575fc5f92decd94cf20))
+
 ## [1.0.7](https://github.com/remarkablegames/just-jokes/compare/v1.0.6...v1.0.7) (2024-02-01)
 
 
