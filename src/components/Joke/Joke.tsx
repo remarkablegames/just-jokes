@@ -16,7 +16,7 @@ import Placeholder from '../Placeholder';
 
 interface Props {
   template: string;
-  placeholders: Record<string, string>;
+  placeholders: Record<string, string | undefined>;
 }
 
 export default function Joke(props: Props) {
@@ -58,7 +58,7 @@ export default function Joke(props: Props) {
         case 'name':
           return (
             <Placeholder
-              category={props.placeholders[text]}
+              category={props.placeholders[text]!}
               id={text}
               key={text}
               onChange={onChange}

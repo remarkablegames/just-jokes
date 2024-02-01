@@ -1,8 +1,8 @@
 import { jokes } from '../data';
 import { random } from './random';
 
-const jokeIds = Object.keys(jokes);
-const jokesCount = jokeIds.length;
+const jokeIds = Object.keys(jokes).map(Number);
+const jokesCount = jokes.length;
 
 /**
  * Generate joke ids.
@@ -20,8 +20,8 @@ export function getJokeIds(count: number) {
  * @param jokeId - Joke id.
  * @returns - Joke.
  */
-export function getJoke(jokeId?: string) {
-  const params = new URLSearchParams(window.location.search);
-  jokeId = params.get('joke_id') || jokeId || String(random(jokesCount));
-  return jokes[jokeId as unknown as keyof typeof jokes];
+export function getJoke(jokeId?: number) {
+  const params = new URLSearchParams(location.search);
+  jokeId = Number(params.get('joke_id')) || jokeId || random(jokesCount);
+  return jokes[jokeId];
 }

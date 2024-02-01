@@ -1,5 +1,5 @@
-{
-  "0": {
+[
+  {
     "template": "Knock, knock.\nWho's there?\n{{noun1}}.\n{{noun2}} who?\n{{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -7,7 +7,7 @@
       "punchline": "punchline"
     }
   },
-  "1": {
+  {
     "template": "What did the {{noun1}} say to the {{noun2}}?\n{{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -15,7 +15,7 @@
       "punchline": "punchline"
     }
   },
-  "2": {
+  {
     "template": "What is something you can say in both a {{place1}} and in a {{place2}}?\n{{punchline}}",
     "placeholders": {
       "place1": "place",
@@ -23,7 +23,7 @@
       "punchline": "punchline"
     }
   },
-  "3": {
+  {
     "template": "What has {{noun1}} and {{noun2}}?\n{{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -31,14 +31,14 @@
       "punchline": "punchline"
     }
   },
-  "4": {
+  {
     "template": "What's the best thing about {{noun}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "5": {
+  {
     "template": "{{noun1}} and {{noun2}} walk into a bar.\n{{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -46,14 +46,14 @@
       "punchline": "punchline"
     }
   },
-  "6": {
+  {
     "template": "Did you hear about the {{noun}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "7": {
+  {
     "template": "Did you hear about the {{noun}} who {{verb}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
@@ -61,14 +61,14 @@
       "punchline": "punchline"
     }
   },
-  "8": {
+  {
     "template": "What do you call a {{noun}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "9": {
+  {
     "template": "What do you call a {{noun}} that {{verb}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
@@ -76,14 +76,14 @@
       "punchline": "punchline"
     }
   },
-  "10": {
+  {
     "template": "Why did the {{animal}} cross the road?\n{{punchline}}",
     "placeholders": {
       "animal": "animal",
       "punchline": "punchline"
     }
   },
-  "11": {
+  {
     "template": "Why did the {{noun}} {{verb}}?\n{{punchline}}",
     "placeholders": {
       "noun": "noun",
@@ -91,14 +91,14 @@
       "punchline": "punchline"
     }
   },
-  "12": {
+  {
     "template": "I went to {{place}} and all I got was this lousy {{noun}}",
     "placeholders": {
       "place": "place",
       "noun": "noun"
     }
   },
-  "13": {
+  {
     "template": "What did {{noun1}} say to {{noun2}}? {{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -106,14 +106,14 @@
       "punchline": "punchline"
     }
   },
-  "14": {
+  {
     "template": "A {{noun}} walks into a bar. The barman says: {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "15": {
+  {
     "template": "I heard there is a {{noun}} that {{verb}}. {{punchline}}",
     "placeholders": {
       "noun": "noun",
@@ -121,14 +121,14 @@
       "punchline": "punchline"
     }
   },
-  "16": {
+  {
     "template": "Have you heard the joke about {{noun}}? {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "17": {
+  {
     "template": "What's the difference between {{noun1}} and {{noun2}}? {{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -136,35 +136,35 @@
       "punchline": "punchline"
     }
   },
-  "18": {
+  {
     "template": "Have you ever tried to {{verb}}? {{punchline}}",
     "placeholders": {
       "verb": "verb",
       "punchline": "punchline"
     }
   },
-  "19": {
+  {
     "template": "Yesterday I accidentally {{verb}}. {{punchline}}",
     "placeholders": {
       "verb": "verb",
       "punchline": "punchline"
     }
   },
-  "20": {
+  {
     "template": "I don't trust {{noun}} because {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "21": {
+  {
     "template": "What's {{noun}}'s computer password? {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "22": {
+  {
     "template": "What kind of {{noun1}} do {{noun2}} do? {{punchline}}",
     "placeholders": {
       "noun1": "noun",
@@ -172,25 +172,25 @@
       "punchline": "punchline"
     }
   },
-  "23": {
+  {
     "template": "What's the advantage of {{noun}}? {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "24": {
+  {
     "template": "What did the {{noun}} name his son? {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   },
-  "25": {
+  {
     "template": "What did the {{noun}} name her daughter? {{punchline}}",
     "placeholders": {
       "noun": "noun",
       "punchline": "punchline"
     }
   }
-}
+]

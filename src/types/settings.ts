@@ -14,5 +14,5 @@ export interface SettingsData {
   players: number;
   rounds: number;
   timer: number;
-  jokeIds: string[];
+  jokeIds: number[];
 }
