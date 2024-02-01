@@ -5,11 +5,14 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { setLocalStorageHost } from 'src/helpers';
+import { useDispatch } from 'src/hooks';
 import { playSound } from 'src/sounds';
+import { actions } from 'src/store';
 import { textStyle } from 'src/styles';
 
 export default function Home() {
+  const dispatch = useDispatch();
+
   return (
     <Box sx={{ textAlign: 'center' }}>
       <Typography component="h1" paragraph variant="h2" sx={textStyle}>
@@ -24,7 +27,7 @@ export default function Home() {
         <Button
           component={Link}
           onClick={() => {
-            setLocalStorageHost(true);
+            dispatch(actions.setUser({ isHost: true }));
             playSound.confirmation();
           }}
           size="large"

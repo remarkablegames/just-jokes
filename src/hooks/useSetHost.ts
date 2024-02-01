@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { getLocalStorageHost, setLocalStorageHost } from 'src/helpers';
+import { useDispatch, useSelector } from 'src/hooks';
+import { actions } from 'src/store';
 
 import { useHost } from './useHost';
 import { usePlayer } from './usePlayer';
@@ -7,11 +8,13 @@ import { usePlayer } from './usePlayer';
 export function useSetHost() {
   const { playerId } = usePlayer();
   const { host, setHost } = useHost();
+  const dispatch = useDispatch();
+  const isHost = useSelector((state) => state.user.isHost);
 
   useEffect(() => {
-    if (!host && getLocalStorageHost()) {
+    if (!host && isHost) {
       setHost(playerId);
-      setLocalStorageHost(false);
+      dispatch(actions.setUser({ isHost: false }));
     }
-  }, []);
+  }, [dispatch, host, isHost, setHost]);
 }
