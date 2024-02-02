@@ -1,8 +1,8 @@
 export enum DatabaseKey {
+  gameState = 'gameState',
   host = 'host',
   jokes = 'jokes',
   players = 'players',
   round = 'round',
-  settings = 'settings',
   votes = 'votes',
 }
