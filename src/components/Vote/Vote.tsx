@@ -9,7 +9,7 @@ import { actions } from 'src/store';
 export default function Vote() {
   const { jokes, resetJokes } = useJoke();
   const { votes, voteJoke, resetVotes } = useVote();
-  const { playerId, resetPlayer } = usePlayer();
+  const { isHost, resetPlayer } = usePlayer();
   const { gameState, setGameState } = useGameState();
 
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ export default function Vote() {
 
       <br />
 
-      {gameState.hostId === playerId && (
+      {isHost && (
         <Button onClick={onNextRound} variant="contained">
           Next Round
         </Button>

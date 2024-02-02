@@ -3,15 +3,17 @@ import { useDispatch } from 'src/hooks';
 import { actions } from 'src/store';
 import { DatabaseKey } from 'src/types';
 
+import { useGameState } from './useGameState';
+
 interface Action {
   type: ActionType;
   payload: ActionPayload;
 }
 
 interface ActionPayload {
-  playerId: string;
   active?: boolean;
   nickname?: string;
+  playerId: string;
 }
 
 enum ActionType {
@@ -22,12 +24,13 @@ enum ActionType {
 }
 
 const getInitialPlayerState = () => ({
-  nickname: '',
   active: false,
+  nickname: '',
 });
 
 export function usePlayer() {
   const dispatchRedux = useDispatch();
+  const { gameState } = useGameState();
   const playerId = useUniqueClientId();
 
   const initialReducerState = {
@@ -71,6 +74,7 @@ export function usePlayer() {
     player: players[playerId],
     playerId,
     players,
+    isHost: gameState.hostId === playerId,
 
     activePlayersCount: Object.values(players).filter(({ active }) => active)
       .length,

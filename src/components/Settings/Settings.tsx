@@ -10,17 +10,17 @@ import { getJokeIds } from 'src/helpers';
 import { useGameState, usePlayer } from 'src/hooks';
 import { playSound } from 'src/sounds';
 import { textStyle } from 'src/styles';
-import { type GameState, SettingsDefaultValue, SettingsName } from 'src/types';
+import { GameState, SettingsDefaultValue, SettingsName } from 'src/types';
 
 const rounds = [1, 2, 3, 4, 5];
 const players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function Settings() {
-  const { playerId } = usePlayer();
-  const { gameState, setGameState } = useGameState();
+  const { isHost } = usePlayer();
+  const { setGameState } = useGameState();
 
-  if (gameState.hostId !== playerId) {
+  if (!isHost) {
     return (
       <>
         <Typography paragraph sx={textStyle}>
