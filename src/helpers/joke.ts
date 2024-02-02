@@ -1,9 +1,6 @@
 import { jokes } from '../data';
 import { random } from './random';
 
-const jokeIds = Object.keys(jokes).map(Number);
-const jokesCount = jokes.length;
-
 /**
  * Generate joke ids.
  *
@@ -11,7 +8,19 @@ const jokesCount = jokes.length;
  * @returns - Joke ids.
  */
 export function getJokeIds(count: number) {
-  return [...Array(count).keys()].map(() => jokeIds[random(jokesCount)]);
+  const jokeIds: number[] = [];
+
+  while (jokeIds.length < count) {
+    const jokeId = random(jokes.length);
+
+    if (count > jokes.length) {
+      jokeIds.push(jokeId);
+    } else if (!jokeIds.includes(jokeId)) {
+      jokeIds.push(jokeId);
+    }
+  }
+
+  return jokeIds;
 }
 
 /**
@@ -22,6 +31,6 @@ export function getJokeIds(count: number) {
  */
 export function getJoke(jokeId?: number) {
   const params = new URLSearchParams(location.search);
-  jokeId = Number(params.get('joke_id')) || jokeId || random(jokesCount);
+  jokeId = Number(params.get('joke_id')) || jokeId || random(jokes.length);
   return jokes[jokeId];
 }
