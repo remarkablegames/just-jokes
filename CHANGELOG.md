@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/remarkablegames/just-jokes/compare/v1.0.8...v1.0.9) (2024-02-02)
+
+
+### Bug Fixes
+
+* **components:** play laugh track when joke is created ([2ac49b2](https://github.com/remarkablegames/just-jokes/commit/2ac49b2d9f0b5641c00d76d2cf11ab5c52811db0))
+
 ## [1.0.8](https://github.com/remarkablegames/just-jokes/compare/v1.0.7...v1.0.8) (2024-02-01)
 
 ### Bug Fixes
