@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { getJokeIds } from 'src/helpers';
-import { useHost, useRound, useSettings } from 'src/hooks';
+import { useGameState, useHost, useRound } from 'src/hooks';
 import { playSound } from 'src/sounds';
 import { textStyle } from 'src/styles';
 import {
@@ -22,7 +22,7 @@ const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function Settings() {
   const { isHost } = useHost();
-  const { setSettings } = useSettings();
+  const { setSettings } = useGameState();
   const { setRound } = useRound();
 
   if (!isHost) {

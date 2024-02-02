@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { getJoke } from 'src/helpers';
-import { useJoke, usePlayer, useRound, useSettings } from 'src/hooks';
+import { useGameState, useJoke, usePlayer, useRound } from 'src/hooks';
 
 import Joke from '../Joke';
 import Vote from '../Vote';
@@ -9,7 +9,7 @@ export default function Round() {
   const { playerId } = usePlayer();
   const { jokes } = useJoke();
   const { round, setRound } = useRound();
-  const { settings } = useSettings();
+  const { settings } = useGameState();
 
   useEffect(() => {
     if (round > settings.rounds) {
