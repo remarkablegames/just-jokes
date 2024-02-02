@@ -69,6 +69,11 @@ export default function Joke(props: Props) {
     },
   );
 
+  const createJoke = useCallback(() => {
+    playSound.confirmation();
+    playSound.crowdLaugh();
+  }, []);
+
   return (
     <Zoom in>
       <Card
@@ -99,7 +104,7 @@ export default function Joke(props: Props) {
         <CardActions>
           <Button
             endIcon={<SmileIcon />}
-            onClick={playSound.confirmation}
+            onClick={createJoke}
             type="submit"
             variant="contained"
           >
