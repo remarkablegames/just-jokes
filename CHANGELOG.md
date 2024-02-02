@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/remarkablegames/just-jokes/compare/v1.0.9...v1.0.10) (2024-02-02)
+
+
+### Bug Fixes
+
+* **hooks:** fix name bug caused by mutated initial player state ([7b97e03](https://github.com/remarkablegames/just-jokes/commit/7b97e03ac00077b33ab99b05fcb27cdccd1814a6))
+
 ## [1.0.9](https://github.com/remarkablegames/just-jokes/compare/v1.0.8...v1.0.9) (2024-02-02)
 
 
