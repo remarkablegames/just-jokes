@@ -9,11 +9,3 @@ export enum SettingsDefaultValue {
   maxRounds = 3,
   maxSeconds = 30,
 }
-
-export interface GameState {
-  jokeIds: number[];
-  maxPlayers: number;
-  maxRounds: number;
-  maxSeconds: number;
-  round: number;
-}
