@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useRound } from 'src/hooks';
+import { useGameState } from 'src/hooks';
 
 import Heading from '../Heading';
 import Invite from '../Invite';
@@ -11,15 +11,15 @@ import Round from '../Round';
 export default function Game() {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
-  const { round } = useRound();
+  const { gameState } = useGameState();
 
-  if (!round) {
+  if (!gameState.round) {
     return null;
   }
 
   return (
     <>
-      <Heading>Round {round}</Heading>
+      <Heading>Round {gameState.round}</Heading>
 
       <Grid
         container

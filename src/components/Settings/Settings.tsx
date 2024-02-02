@@ -7,14 +7,10 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { getJokeIds } from 'src/helpers';
-import { useGameState, useHost, useRound } from 'src/hooks';
+import { useGameState, useHost } from 'src/hooks';
 import { playSound } from 'src/sounds';
 import { textStyle } from 'src/styles';
-import {
-  type SettingsData,
-  SettingsDefaultValue,
-  SettingsName,
-} from 'src/types';
+import { type GameState, SettingsDefaultValue, SettingsName } from 'src/types';
 
 const rounds = [1, 2, 3, 4, 5];
 const players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -23,7 +19,6 @@ const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 export default function Settings() {
   const { isHost } = useHost();
   const { setGameState } = useGameState();
-  const { setRound } = useRound();
 
   if (!isHost) {
     return (
@@ -41,17 +36,17 @@ export default function Settings() {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const settings = Object.values(SettingsName).reduce(
+    const gameState = Object.values(SettingsName).reduce(
       (accumulator, value) => {
         accumulator[value] = Number(formData.get(value));
         return accumulator;
       },
-      {} as SettingsData,
+      {} as GameState,
     );
-    settings.jokeIds = getJokeIds(settings.maxRounds);
 
-    setGameState(settings);
-    setRound(1);
+    gameState.jokeIds = getJokeIds(gameState.maxRounds);
+    gameState.round = 1;
+    setGameState(gameState);
   }
 
   return (

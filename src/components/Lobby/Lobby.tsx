@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { RoomQRCode } from 'driftdb-react';
 import {
   useDebugDatabase,
-  useRound,
+  useGameState,
   useSetHost,
   useSetPlayerActive,
 } from 'src/hooks';
@@ -23,9 +23,9 @@ export default function Lobby() {
 
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
-  const { round } = useRound();
+  const { gameState } = useGameState();
 
-  if (round) {
+  if (gameState.round) {
     return null;
   }
 

@@ -10,9 +10,10 @@ export enum SettingsDefaultValue {
   maxSeconds = 30,
 }
 
-export interface SettingsData {
+export interface GameState {
   jokeIds: number[];
   maxPlayers: number;
   maxRounds: number;
   maxSeconds: number;
+  round: number;
 }

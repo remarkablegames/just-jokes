@@ -1,7 +1,7 @@
 import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { useHost, useJoke, usePlayer, useRound, useVote } from 'src/hooks';
+import { useGameState, useHost, useJoke, usePlayer, useVote } from 'src/hooks';
 import { useDispatch, useSelector } from 'src/hooks';
 import { playSound } from 'src/sounds';
 import { actions } from 'src/store';
@@ -11,7 +11,7 @@ export default function Vote() {
   const { jokes, resetJokes } = useJoke();
   const { votes, voteJoke, resetVotes } = useVote();
   const { resetPlayer } = usePlayer();
-  const { round, setRound } = useRound();
+  const { gameState, setGameState } = useGameState();
 
   const dispatch = useDispatch();
   const hasVoted = useSelector((state) => state.user.hasVoted);
@@ -20,7 +20,10 @@ export default function Vote() {
     resetJokes();
     resetVotes();
     resetPlayer();
-    setRound(round + 1);
+    setGameState({
+      ...gameState,
+      round: gameState.round + 1,
+    });
   }
 
   return (

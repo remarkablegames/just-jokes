@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { getJoke } from 'src/helpers';
-import { useGameState, useJoke, usePlayer, useRound } from 'src/hooks';
+import { useGameState, useJoke, usePlayer } from 'src/hooks';
 
 import Joke from '../Joke';
 import Vote from '../Vote';
@@ -8,20 +8,24 @@ import Vote from '../Vote';
 export default function Round() {
   const { playerId } = usePlayer();
   const { jokes } = useJoke();
-  const { round, setRound } = useRound();
-  const { gameState } = useGameState();
+  const { gameState, setGameState } = useGameState();
 
   useEffect(() => {
-    if (round > gameState.maxRounds) {
-      setRound(0);
+    if (gameState.round > gameState.maxRounds) {
+      setGameState({
+        ...gameState,
+        round: 0,
+      });
     }
-  }, [round]);
+  }, [gameState.round]);
 
   if (jokes[playerId]) {
     return <Vote />;
   }
 
-  const { template, placeholders } = getJoke(gameState.jokeIds[round - 1]);
+  const { template, placeholders } = getJoke(
+    gameState.jokeIds[gameState.round - 1],
+  );
 
   return <Joke template={template} placeholders={placeholders} />;
 }

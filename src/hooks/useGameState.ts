@@ -1,15 +1,12 @@
 import { useSharedState } from 'driftdb-react';
-import {
-  DatabaseKey,
-  type SettingsData,
-  SettingsDefaultValue,
-} from 'src/types';
+import { DatabaseKey, type GameState, SettingsDefaultValue } from 'src/types';
 
 export function useGameState() {
   const [gameState, setGameState] = useSharedState(DatabaseKey.gameState, {
     ...SettingsDefaultValue,
     jokeIds: [],
-  } as SettingsData);
+    round: 0,
+  } as GameState);
 
   return { gameState, setGameState };
 }
