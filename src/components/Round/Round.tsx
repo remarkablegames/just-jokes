@@ -9,10 +9,10 @@ export default function Round() {
   const { playerId } = usePlayer();
   const { jokes } = useJoke();
   const { round, setRound } = useRound();
-  const { settings } = useGameState();
+  const { gameState } = useGameState();
 
   useEffect(() => {
-    if (round > settings.rounds) {
+    if (round > gameState.rounds) {
       setRound(0);
     }
   }, [round]);
@@ -21,7 +21,7 @@ export default function Round() {
     return <Vote />;
   }
 
-  const { template, placeholders } = getJoke(settings.jokeIds[round - 1]);
+  const { template, placeholders } = getJoke(gameState.jokeIds[round - 1]);
 
   return <Joke template={template} placeholders={placeholders} />;
 }

@@ -6,10 +6,10 @@ import {
 } from 'src/types';
 
 export function useGameState() {
-  const [settings, setSettings] = useSharedState(DatabaseKey.settings, {
+  const [gameState, setGameState] = useSharedState(DatabaseKey.settings, {
     ...SettingsDefaultValue,
     jokeIds: [],
   } as SettingsData);
 
-  return { settings, setSettings };
+  return { gameState, setGameState };
 }

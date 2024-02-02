@@ -22,7 +22,7 @@ const seconds = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function Settings() {
   const { isHost } = useHost();
-  const { setSettings } = useGameState();
+  const { setGameState } = useGameState();
   const { setRound } = useRound();
 
   if (!isHost) {
@@ -50,7 +50,7 @@ export default function Settings() {
     );
     settings.jokeIds = getJokeIds(settings.rounds);
 
-    setSettings(settings);
+    setGameState(settings);
     setRound(1);
   }
 
