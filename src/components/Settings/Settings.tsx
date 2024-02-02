@@ -48,7 +48,7 @@ export default function Settings() {
       },
       {} as SettingsData,
     );
-    settings.jokeIds = getJokeIds(settings.rounds);
+    settings.jokeIds = getJokeIds(settings.maxRounds);
 
     setGameState(settings);
     setRound(1);
@@ -58,10 +58,10 @@ export default function Settings() {
     <Card component="form" onSubmit={handleSubmit} sx={{ padding: 1 }}>
       <CardContent>
         <TextField
-          defaultValue={SettingsDefaultValue.players}
+          defaultValue={SettingsDefaultValue.maxPlayers}
           helperText="Number of players"
           label="Players"
-          name={SettingsName.players}
+          name={SettingsName.maxPlayers}
           onClick={playSound.select}
           select
         >
@@ -76,10 +76,10 @@ export default function Settings() {
         <br />
 
         <TextField
-          defaultValue={SettingsDefaultValue.rounds}
+          defaultValue={SettingsDefaultValue.maxRounds}
           helperText="Number of rounds"
           label="Rounds"
-          name={SettingsName.rounds}
+          name={SettingsName.maxRounds}
           onClick={playSound.select}
           select
         >
@@ -94,10 +94,10 @@ export default function Settings() {
         <br />
 
         <TextField
-          defaultValue={SettingsDefaultValue.timer}
+          defaultValue={SettingsDefaultValue.maxSeconds}
           helperText="Seconds per round"
           label="Timer"
-          name={SettingsName.timer}
+          name={SettingsName.maxSeconds}
           onClick={playSound.select}
           select
         >

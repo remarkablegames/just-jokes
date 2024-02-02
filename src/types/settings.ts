@@ -1,18 +1,18 @@
 export enum SettingsName {
-  players = 'players',
-  rounds = 'rounds',
-  timer = 'timer',
+  maxPlayers = 'maxPlayers',
+  maxRounds = 'maxRounds',
+  maxSeconds = 'maxSeconds',
 }
 
 export enum SettingsDefaultValue {
-  players = 4,
-  rounds = 3,
-  timer = 30,
+  maxPlayers = 4,
+  maxRounds = 3,
+  maxSeconds = 30,
 }
 
 export interface SettingsData {
-  players: number;
-  rounds: number;
-  timer: number;
   jokeIds: number[];
+  maxPlayers: number;
+  maxRounds: number;
+  maxSeconds: number;
 }

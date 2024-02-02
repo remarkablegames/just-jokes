@@ -12,7 +12,7 @@ export default function Round() {
   const { gameState } = useGameState();
 
   useEffect(() => {
-    if (round > gameState.rounds) {
+    if (round > gameState.maxRounds) {
       setRound(0);
     }
   }, [round]);
