@@ -3,6 +3,7 @@ import { DatabaseKey, GameState, SettingsDefaultValue } from 'src/types';
 
 const initialState: GameState = {
   ...SettingsDefaultValue,
+  hostId: '',
   jokeIds: [],
   round: 0,
 };

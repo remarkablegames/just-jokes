@@ -6,7 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Skeleton from '@mui/material/Skeleton';
-import { useHost, usePlayer, useVote } from 'src/hooks';
+import { useGameState, usePlayer, useVote } from 'src/hooks';
 
 const playerColors = [
   '#FF5733',
@@ -26,7 +26,7 @@ function getPlayerColor(index: number) {
 }
 
 export default function Players() {
-  const { host } = useHost();
+  const { gameState } = useGameState();
   const { players, playerId } = usePlayer();
   const { votes } = useVote();
 
@@ -43,7 +43,7 @@ export default function Players() {
               <Badge
                 badgeContent=" "
                 color="primary"
-                invisible={host !== id}
+                invisible={gameState.hostId !== id}
                 variant="dot"
               >
                 <FaceIcon style={{ color: iconColor }} />
