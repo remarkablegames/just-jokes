@@ -1,5 +1,4 @@
 import { useSharedReducer, useUniqueClientId } from 'driftdb-react';
-import { useState } from 'react';
 import { useDispatch } from 'src/hooks';
 import { actions } from 'src/store';
 import { DatabaseKey } from 'src/types';
@@ -22,18 +21,17 @@ enum ActionType {
   reset = 'reset',
 }
 
-const initialPlayerState = {
+const getInitialPlayerState = () => ({
   nickname: '',
   active: false,
-};
+});
 
 export function usePlayer() {
   const dispatchRedux = useDispatch();
   const playerId = useUniqueClientId();
-  const [player, setPlayer] = useState(initialPlayerState);
 
   const initialReducerState = {
-    [playerId]: initialPlayerState,
+    [playerId]: getInitialPlayerState(),
   };
 
   const [players, dispatch] = useSharedReducer<
@@ -56,7 +54,7 @@ export function usePlayer() {
           break;
 
         case ActionType.remove:
-          state[payload.playerId] = initialPlayerState;
+          state[payload.playerId] = getInitialPlayerState();
           break;
 
         case ActionType.reset:
@@ -64,14 +62,13 @@ export function usePlayer() {
           break;
       }
 
-      setPlayer(state[playerId]);
       return state;
     },
     initialReducerState,
   );
 
   return {
-    player,
+    player: players[playerId],
     playerId,
     players,
 
