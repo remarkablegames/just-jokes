@@ -45,7 +45,6 @@ export default function Settings() {
     );
 
     setGameState({
-      ...gameState,
       ...settings,
       jokeIds: getJokeIds(settings.maxRounds),
       round: 1,

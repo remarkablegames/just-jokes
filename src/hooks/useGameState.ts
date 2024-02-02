@@ -14,5 +14,13 @@ export function useGameState() {
     initialState,
   );
 
-  return { gameState, setGameState };
+  return {
+    gameState,
+
+    setGameState: (state: Partial<GameState>) =>
+      setGameState({
+        ...gameState,
+        ...state,
+      }),
+  };
 }

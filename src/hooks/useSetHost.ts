@@ -14,7 +14,6 @@ export function useSetHost() {
   useEffect(() => {
     if (!gameState.hostId && isHost) {
       setGameState({
-        ...gameState,
         hostId: playerId,
       });
       dispatch(actions.setUser({ isHost: false }));

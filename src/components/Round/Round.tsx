@@ -13,7 +13,6 @@ export default function Round() {
   useEffect(() => {
     if (gameState.round > gameState.maxRounds) {
       setGameState({
-        ...gameState,
         round: 0,
       });
     }

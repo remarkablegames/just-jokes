@@ -20,7 +20,6 @@ export default function Vote() {
     resetVotes();
     resetPlayer();
     setGameState({
-      ...gameState,
       round: gameState.round + 1,
     });
   }
