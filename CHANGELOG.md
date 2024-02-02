@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/remarkablegames/just-jokes/compare/v1.0.10...v1.0.11) (2024-02-02)
+
+
+### Bug Fixes
+
+* **helpers:** generate unique joke ids ([2e47694](https://github.com/remarkablegames/just-jokes/commit/2e47694e0dec2409c721899ee20bba48435f9cb2))
+
 ## [1.0.10](https://github.com/remarkablegames/just-jokes/compare/v1.0.9...v1.0.10) (2024-02-02)
 
 
