@@ -5,4 +5,5 @@ Feature: Home
       And I see heading "Just Jokes"
     When I click on link "Create Room"
     Then I see heading "Room"
+      And I see pathname "/room"
       And I see search contains "?_driftdb_room="
