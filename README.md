@@ -5,6 +5,7 @@
 # just-jokes
 
 [![build](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml)
+[![cypress](https://github.com/remarkablegames/just-jokes/actions/workflows/cypress.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/cypress.yml)
 
 😂 [Just Jokes](https://remarkablegames.org/just-jokes/) is party game where you make jokes with your friends.
 
