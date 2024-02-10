@@ -7,16 +7,16 @@ import { usePlayer } from './usePlayer';
 
 export function useSetHost() {
   const { playerId } = usePlayer();
-  const { gameState, setGameState } = useGameState();
+  const { setGameState } = useGameState();
   const dispatch = useDispatch();
   const isHost = useSelector((state) => state.user.isHost);
 
   useEffect(() => {
-    if (!gameState.hostId && isHost) {
+    if (isHost) {
       setGameState({
         hostId: playerId,
       });
       dispatch(actions.setUser({ isHost: false }));
     }
-  }, [gameState.hostId, isHost]);
+  }, []);
 }
