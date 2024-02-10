@@ -1,6 +1,8 @@
 Feature: Room
   Scenario: As a host, I can play 1 round
     Given I visit "/"
+    Then I see heading "Just Jokes"
+      And I see link "Create Room"
     When I click on link "Create Room"
     Then I see heading "Room"
       And I see search contains "?_driftdb_room="
