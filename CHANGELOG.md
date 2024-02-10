@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12](https://github.com/remarkablegames/just-jokes/compare/v1.0.11...v1.0.12) (2024-02-10)
+
+
+### Bug Fixes
+
+* **hooks:** fix race condition in useSetHost ([8bb7ff1](https://github.com/remarkablegames/just-jokes/commit/8bb7ff1235a26eeb1b5febe21e5076ccdc8c3a9a))
+
 ## [1.0.11](https://github.com/remarkablegames/just-jokes/compare/v1.0.10...v1.0.11) (2024-02-02)
 
 
