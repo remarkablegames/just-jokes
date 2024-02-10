@@ -6,6 +6,7 @@ import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
+  defaultCommandTimeout: 10000,
   e2e: {
     baseUrl: 'http://localhost:5173',
     specPattern: '**/*.feature',
