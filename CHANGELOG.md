@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.13](https://github.com/remarkablegames/just-jokes/compare/v1.0.12...v1.0.13) (2024-02-16)
+
+
+### Bug Fixes
+
+* **components:** set host in Nickname instead of Lobby ([78a8c88](https://github.com/remarkablegames/just-jokes/commit/78a8c8861635903ac1da4dfc9cb382e9ed2d82da))
+* **hooks:** fix race condition in useSetHost ([36538c8](https://github.com/remarkablegames/just-jokes/commit/36538c80a9b7736726ed41ef3dd9ba31fb947a11))
+
 ## [1.0.12](https://github.com/remarkablegames/just-jokes/compare/v1.0.11...v1.0.12) (2024-02-10)
 
 
