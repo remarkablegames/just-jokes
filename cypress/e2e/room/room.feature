@@ -1,6 +1,8 @@
 Feature: Room
   Scenario: As a host, I can play 1 round
     Given I visit "/"
+      # wait for DOM to be ready
+      And I wait 1 second
     Then I see heading "Just Jokes"
       And I see link "Create Room"
     When I click on link "Create Room"
