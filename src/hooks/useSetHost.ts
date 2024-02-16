@@ -12,11 +12,11 @@ export function useSetHost() {
   const isHost = useSelector((state) => state.user.isHost);
 
   useEffect(() => {
-    if (isHost) {
+    if (isHost && playerId) {
       setGameState({
         hostId: playerId,
       });
       dispatch(actions.setUser({ isHost: false }));
     }
-  }, []);
+  }, [playerId]);
 }
