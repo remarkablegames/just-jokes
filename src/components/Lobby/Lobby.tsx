@@ -3,12 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { RoomQRCode } from 'driftdb-react';
-import {
-  useDebugDatabase,
-  useGameState,
-  useSetHost,
-  useSetPlayerActive,
-} from 'src/hooks';
+import { useDebugDatabase, useGameState, useSetPlayerActive } from 'src/hooks';
 import { textStyle } from 'src/styles';
 
 import Heading from '../Heading';
@@ -18,7 +13,6 @@ import Settings from '../Settings';
 
 export default function Lobby() {
   useDebugDatabase();
-  useSetHost();
   useSetPlayerActive();
 
   const theme = useTheme();

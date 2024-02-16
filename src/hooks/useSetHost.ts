@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'src/hooks';
 import { actions } from 'src/store';
 
@@ -11,12 +10,14 @@ export function useSetHost() {
   const dispatch = useDispatch();
   const isHost = useSelector((state) => state.user.isHost);
 
-  useEffect(() => {
+  function setHost() {
     if (isHost && playerId) {
       setGameState({
         hostId: playerId,
       });
       dispatch(actions.setUser({ isHost: false }));
     }
-  }, [playerId]);
+  }
+
+  return { setHost };
 }

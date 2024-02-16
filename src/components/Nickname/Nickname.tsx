@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import Dialog from 'src/components/Dialog';
 import { getLocalStorageNickname, setLocalStorageNickname } from 'src/helpers';
-import { usePlayer } from 'src/hooks';
+import { usePlayer, useSetHost } from 'src/hooks';
 import { backgroundMusic, playSound } from 'src/sounds';
 
 export default function Nickname() {
@@ -10,6 +10,7 @@ export default function Nickname() {
   const [error, setError] = useState(false);
   const [nickname, setNickname] = useState(getLocalStorageNickname());
   const { setPlayerNickname } = usePlayer();
+  const { setHost } = useSetHost();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
@@ -28,6 +29,7 @@ export default function Nickname() {
       return setError(true);
     }
 
+    setHost();
     setPlayerNickname(nickname);
     setLocalStorageNickname(nickname);
     setOpen(false);
