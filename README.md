@@ -17,7 +17,7 @@ Play the game on:
 
 ## Credits
 
-- [remarkablemark](https://github.com/remarkablemark) - Programmer, UI, Audio
+- [remarkablemark](https://github.com/remarkablemark) - Programmer, UI, Backend, Audio
 - [Rob Cohen](https://github.com/rmacohen) - Programmer, UI, Design
 - [Earth by HoliznaCC0](https://freemusicarchive.org/music/holiznacc0/interstellar-pop-songs/earth/)
 - [Kenney Interface Sounds](https://www.kenney.nl/assets/interface-sounds)
