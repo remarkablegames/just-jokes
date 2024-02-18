@@ -2,8 +2,9 @@
   <img src="https://raw.githubusercontent.com/remarkablegames/just-jokes/master/public/screenshots/home.png" alt="Just Jokes">
 </p>
 
-# just-jokes
+# Just Jokes
 
+![release](https://img.shields.io/github/v/release/remarkablegames/just-jokes)
 [![build](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/build.yml)
 [![cypress](https://github.com/remarkablegames/just-jokes/actions/workflows/cypress.yml/badge.svg)](https://github.com/remarkablegames/just-jokes/actions/workflows/cypress.yml)
 
