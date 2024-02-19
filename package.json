@@ -42,7 +42,7 @@
     "@commitlint/config-conventional": "18.6.2",
     "@types/howler": "2.2.11",
     "@types/mustache": "4.2.5",
-    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/eslint-plugin": "7.0.2",
     "@typescript-eslint/parser": "7.0.2",
     "@vitejs/plugin-react-swc": "3.6.0",
     "cypress": "13.6.4",
