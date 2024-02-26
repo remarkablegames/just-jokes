@@ -43,7 +43,7 @@
     "@types/howler": "2.2.11",
     "@types/mustache": "4.2.5",
     "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.0.2",
+    "@typescript-eslint/parser": "7.1.0",
     "@vitejs/plugin-react-swc": "3.6.0",
     "cypress": "13.6.6",
     "cypress-cucumber-steps": "3.59.0",
