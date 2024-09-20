@@ -42,7 +42,7 @@
     "@commitlint/config-conventional": "19.5.0",
     "@eslint/compat": "1.1.1",
     "@eslint/eslintrc": "3.1.0",
-    "@eslint/js": "9.10.0",
+    "@eslint/js": "9.11.0",
     "@types/howler": "2.2.11",
     "@types/mustache": "4.2.5",
     "@typescript-eslint/eslint-plugin": "8.6.0",
