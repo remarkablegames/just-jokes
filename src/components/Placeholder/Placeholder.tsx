@@ -30,6 +30,7 @@ export default function Placeholder(props: Props) {
           {...params}
           label={props.category}
           onClick={playSound.select}
+          required
         />
       );
     },
