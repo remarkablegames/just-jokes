@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.15](https://github.com/remarkablegames/just-jokes/compare/v1.0.14...v1.0.15) (2024-09-20)
+
+
+### Bug Fixes
+
+* **Placeholder:** ensure form inputs for joke are required ([25c1979](https://github.com/remarkablegames/just-jokes/commit/25c19796817030740521dcd36fcd6e7c0d3a9c36)), closes [#304](https://github.com/remarkablegames/just-jokes/issues/304)
+
 ## [1.0.14](https://github.com/remarkablegames/just-jokes/compare/v1.0.13...v1.0.14) (2024-09-20)
 
 ### Miscellaneous Chores
