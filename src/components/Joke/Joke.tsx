@@ -27,6 +27,9 @@ export default function Joke(props: Props) {
   const onSubmit = useCallback(
     (event: React.ChangeEvent<HTMLFormElement>) => {
       event.preventDefault();
+
+      playSound.crowdLaugh();
+
       setJoke({
         creatorId: playerId,
         joke: Mustache.render(props.template, placeholders),
@@ -71,7 +74,6 @@ export default function Joke(props: Props) {
 
   const createJoke = useCallback(() => {
     playSound.confirmation();
-    playSound.crowdLaugh();
   }, []);
 
   return (
