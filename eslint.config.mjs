@@ -32,8 +32,8 @@ export default [
   {
     plugins: {
       '@typescript-eslint': typescriptEslint,
-      prettier,
       'simple-import-sort': simpleImportSort,
+      prettier,
       tsdoc,
     },
 
