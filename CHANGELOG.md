@@ -1,11 +1,16 @@
 # Changelog
 
-## [1.0.15](https://github.com/remarkablegames/just-jokes/compare/v1.0.14...v1.0.15) (2024-09-20)
+## [1.0.16](https://github.com/remarkablegames/just-jokes/compare/v1.0.15...v1.0.16) (2025-05-12)
 
+### Miscellaneous Chores
+
+- release 1.0.16 ([8a1dcab](https://github.com/remarkablegames/just-jokes/commit/8a1dcab6bb55a73c5e52904b57fc20a66493062e))
+
+## [1.0.15](https://github.com/remarkablegames/just-jokes/compare/v1.0.14...v1.0.15) (2024-09-20)
 
 ### Bug Fixes
 
-* **Placeholder:** ensure form inputs for joke are required ([25c1979](https://github.com/remarkablegames/just-jokes/commit/25c19796817030740521dcd36fcd6e7c0d3a9c36)), closes [#304](https://github.com/remarkablegames/just-jokes/issues/304)
+- **Placeholder:** ensure form inputs for joke are required ([25c1979](https://github.com/remarkablegames/just-jokes/commit/25c19796817030740521dcd36fcd6e7c0d3a9c36)), closes [#304](https://github.com/remarkablegames/just-jokes/issues/304)
 
 ## [1.0.14](https://github.com/remarkablegames/just-jokes/compare/v1.0.13...v1.0.14) (2024-09-20)
 
