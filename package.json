@@ -58,7 +58,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.2.5",
     "prettier": "3.6.2",
-    "vite": "7.1.11",
+    "vite": "7.1.12",
     "vite-plugin-html": "3.2.2"
   },
   "overrides": {
