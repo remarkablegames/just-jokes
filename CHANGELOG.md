@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.17](https://github.com/remarkablegames/just-jokes/compare/v1.0.16...v1.0.17) (2025-12-18)
+
+### Miscellaneous Chores
+
+- release 1.0.17 ([a3ae1ca](https://github.com/remarkablegames/just-jokes/commit/a3ae1cac4b8e53e3e43508aabff01172f6cfcb39))
+
 ## [1.0.16](https://github.com/remarkablegames/just-jokes/compare/v1.0.15...v1.0.16) (2025-05-12)
 
 ### Miscellaneous Chores
