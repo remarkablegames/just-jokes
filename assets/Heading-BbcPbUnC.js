@@ -1,0 +1,1 @@
+import{it as e,v as t}from"./hooks-C15xZS-b.js";import{t as n}from"./text-RYYmqlDk.js";var r=e();function i(e){return(0,r.jsx)(t,{component:`h1`,paragraph:!0,variant:`h4`,sx:n,children:e.children})}export{i as t};
