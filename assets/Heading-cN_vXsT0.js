@@ -1,0 +1,1 @@
+import{O as e,mt as t}from"./index-BbimYMy-.js";import{t as n}from"./text-CRGwoFA_.js";var r=t();function i(t){return(0,r.jsx)(e,{component:`h1`,paragraph:!0,variant:`h4`,sx:n,children:t.children})}export{i as t};
