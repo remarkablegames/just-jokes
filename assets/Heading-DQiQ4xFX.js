@@ -1,0 +1,1 @@
+import{it as e,v as t}from"./hooks-D-ukllY_.js";import{t as n}from"./text-CRGwoFA_.js";var r=e();function i(e){return(0,r.jsx)(t,{component:`h1`,paragraph:!0,variant:`h4`,sx:n,children:e.children})}export{i as t};
