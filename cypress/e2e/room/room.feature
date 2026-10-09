@@ -13,7 +13,7 @@ Feature: Room
     Then I see text "Mark"
       And I see button "Invite Your Friends!"
       And I see text "QR Code"
-    When I click on label "Rounds"
+    When I click on text "Rounds"
       And I type "{enter}"
       And I click on text "1"
       And I click on button "Start"
