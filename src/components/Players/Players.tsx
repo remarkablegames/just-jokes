@@ -52,7 +52,7 @@ export default function Players() {
 
             <ListItemText
               primary={player.nickname || <Skeleton />}
-              primaryTypographyProps={textProps}
+              slotProps={{ primary: textProps }}
             />
 
             {votes[id] > 0 && (

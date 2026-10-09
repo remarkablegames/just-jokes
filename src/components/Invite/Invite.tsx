@@ -9,7 +9,7 @@ export default function Share() {
   const [showCopied, setShowCopied] = useState(false);
 
   function handleClick() {
-    navigator.clipboard.writeText(location.href);
+    void navigator.clipboard.writeText(location.href);
     playSound.drop();
     setShowCopied(true);
 

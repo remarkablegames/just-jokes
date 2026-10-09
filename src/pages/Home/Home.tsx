@@ -15,11 +15,11 @@ export default function Home() {
 
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography component="h1" paragraph variant="h2" sx={textStyle}>
+      <Typography component="h1" gutterBottom variant="h2" sx={textStyle}>
         Just Jokes
       </Typography>
 
-      <Typography paragraph variant="h5" sx={textStyle}>
+      <Typography gutterBottom variant="h5" sx={textStyle}>
         Play with your friends
       </Typography>
 

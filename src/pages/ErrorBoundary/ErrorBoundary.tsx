@@ -26,7 +26,7 @@ export default function ErrorBoundary() {
 
       <br />
 
-      <Typography paragraph sx={textStyle}>
+      <Typography sx={textStyle}>
         Refresh the page or go to{' '}
         <Link component={RouterLink} to="/" sx={textStyle}>
           home

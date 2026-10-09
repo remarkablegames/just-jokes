@@ -10,7 +10,7 @@ import { getJokeIds } from 'src/helpers';
 import { useGameState, usePlayer } from 'src/hooks';
 import { playSound } from 'src/sounds';
 import { textStyle } from 'src/styles';
-import { GameState, SettingsDefaultValue, SettingsName } from 'src/types';
+import { type GameState, SettingsDefaultValue, SettingsName } from 'src/types';
 
 const rounds = [1, 2, 3, 4, 5];
 const players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -23,7 +23,7 @@ export default function Settings() {
   if (!isHost) {
     return (
       <>
-        <Typography paragraph sx={textStyle}>
+        <Typography gutterBottom sx={textStyle}>
           Waiting for the host to start the game...
         </Typography>
 

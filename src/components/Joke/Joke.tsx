@@ -42,7 +42,7 @@ export default function Joke(props: Props) {
     (id: string, value: string | null) => {
       setPlaceholders((placeholders) => ({
         ...placeholders,
-        [id]: value || '',
+        [id]: value ?? '',
       }));
     },
     [setPlaceholders],
@@ -61,11 +61,11 @@ export default function Joke(props: Props) {
         case 'name':
           return (
             <Placeholder
-              category={props.placeholders[text]!}
+              category={props.placeholders[text] ?? ''}
               id={text}
               key={text}
               onChange={onChange}
-              value={placeholders[text] || ''}
+              value={placeholders[text] ?? ''}
             />
           );
       }

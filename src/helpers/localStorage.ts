@@ -3,7 +3,7 @@ enum LocalStorageKey {
 }
 
 export function getLocalStorageNickname(): string {
-  return localStorage.getItem(LocalStorageKey.nickname) || '';
+  return localStorage.getItem(LocalStorageKey.nickname) ?? '';
 }
 
 export function setLocalStorageNickname(nickname: string): void {

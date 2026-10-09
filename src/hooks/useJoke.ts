@@ -2,16 +2,9 @@ import { useSharedReducer, useUniqueClientId } from 'driftdb-react';
 import { useState } from 'react';
 import { DatabaseKey } from 'src/types';
 
-interface Action {
-  type: ActionType;
-  payload: ActionPayload;
-}
-
-interface ActionPayload {
-  creatorId: string;
-  joke?: string;
-  playerId?: string;
-}
+type Action =
+  | { type: ActionType.joke; payload: { creatorId: string; joke: string } }
+  | { type: ActionType.reset; payload: { creatorId: string } };
 
 enum ActionType {
   joke = 'joke',
@@ -40,7 +33,7 @@ export function useJoke() {
 
       switch (type) {
         case ActionType.joke:
-          state[payload.creatorId] = payload.joke!;
+          state[payload.creatorId] = payload.joke;
           break;
 
         case ActionType.reset:
@@ -58,16 +51,18 @@ export function useJoke() {
     joke,
     jokes,
 
-    setJoke: (payload: { creatorId: string; joke: string }) =>
+    setJoke: (payload: { creatorId: string; joke: string }) => {
       dispatch({
         type: ActionType.joke,
         payload,
-      }),
+      });
+    },
 
-    resetJokes: () =>
+    resetJokes: () => {
       dispatch({
         type: ActionType.reset,
         payload: { creatorId: clientId },
-      }),
+      });
+    },
   };
 }

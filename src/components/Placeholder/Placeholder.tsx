@@ -14,10 +14,10 @@ interface Props {
 }
 
 export default function Placeholder(props: Props) {
-  const options = getOptions(props.category)?.map((option) => option) || [];
+  const options = getOptions(props.category)?.map((option) => option) ?? [];
 
   const onInputChange = useCallback(
-    (event: unknown, value: string | null) => {
+    (_event: unknown, value: string | null) => {
       props.onChange(props.id, value);
     },
     [props.id, props.onChange],

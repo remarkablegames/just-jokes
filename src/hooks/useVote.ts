@@ -54,16 +54,18 @@ export function useVote() {
   return {
     votes,
 
-    voteJoke: (playerId: string) =>
+    voteJoke: (playerId: string) => {
       dispatch({
         type: ActionType.vote,
         payload: { playerId },
-      }),
+      });
+    },
 
-    resetVotes: () =>
+    resetVotes: () => {
       dispatch({
         type: ActionType.reset,
         payload: { playerId: clientId },
-      }),
+      });
+    },
   };
 }

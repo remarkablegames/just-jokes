@@ -1,5 +1,5 @@
 import { useSharedState } from 'driftdb-react';
-import { DatabaseKey, GameState, SettingsDefaultValue } from 'src/types';
+import { DatabaseKey, type GameState, SettingsDefaultValue } from 'src/types';
 
 const initialState: GameState = {
   ...SettingsDefaultValue,
@@ -17,10 +17,11 @@ export function useGameState() {
   return {
     gameState,
 
-    setGameState: (state: Partial<GameState>) =>
+    setGameState: (state: Partial<GameState>) => {
       setGameState({
         ...gameState,
         ...state,
-      }),
+      });
+    },
   };
 }

@@ -31,6 +31,7 @@ export function getJokeIds(count: number) {
  */
 export function getJoke(jokeId?: number) {
   const params = new URLSearchParams(location.search);
-  jokeId = Number(params.get('joke_id')) || jokeId || random(jokes.length);
-  return jokes[jokeId];
+  const jokeIdParam = Number(params.get('joke_id'));
+  const id = jokeIdParam || (jokeId ?? random(jokes.length));
+  return jokes[id];
 }

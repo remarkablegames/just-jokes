@@ -7,7 +7,7 @@ interface Props {
 
 export default function Heading(props: Props) {
   return (
-    <Typography component="h1" paragraph variant="h4" sx={textStyle}>
+    <Typography component="h1" gutterBottom variant="h4" sx={textStyle}>
       {props.children}
     </Typography>
   );

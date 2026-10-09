@@ -26,7 +26,8 @@ export default function Nickname() {
   function handleSave() {
     if (!nickname) {
       playSound.click();
-      return setError(true);
+      setError(true);
+      return;
     }
 
     setHost();

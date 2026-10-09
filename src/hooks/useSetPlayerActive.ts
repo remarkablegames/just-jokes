@@ -4,15 +4,6 @@ import { backgroundMusic } from 'src/sounds';
 
 import { usePlayer } from './usePlayer';
 
-enum Event {
-  beforeunload = 'beforeunload',
-  visibilitychange = 'visibilitychange',
-}
-
-enum VisibilityState {
-  hidden = 'hidden',
-}
-
 export function useSetPlayerActive() {
   const navigate = useNavigate();
   const { setPlayerActive, removePlayer } = usePlayer();
@@ -21,7 +12,7 @@ export function useSetPlayerActive() {
     setPlayerActive(true);
 
     function onVisibilityChange() {
-      const isActive = document.visibilityState !== VisibilityState.hidden;
+      const isActive = document.visibilityState !== 'hidden';
       setPlayerActive(isActive);
 
       if (isActive) {
@@ -31,21 +22,20 @@ export function useSetPlayerActive() {
       }
     }
 
-    document.addEventListener(Event.visibilitychange, onVisibilityChange);
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     function onBeforeUnload(event: BeforeUnloadEvent) {
       event.preventDefault();
-      event.returnValue = true;
       backgroundMusic.pause();
       removePlayer();
-      navigate('/');
+      void navigate('/');
     }
 
-    window.addEventListener(Event.beforeunload, onBeforeUnload);
+    window.addEventListener('beforeunload', onBeforeUnload);
 
     return function unsubscribe() {
-      document.removeEventListener(Event.visibilitychange, onVisibilityChange);
-      document.removeEventListener(Event.beforeunload, onBeforeUnload);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('beforeunload', onBeforeUnload);
     };
   }, []);
 }

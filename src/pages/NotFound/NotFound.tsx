@@ -12,7 +12,7 @@ export default function NotFound() {
     <>
       <Heading>Not Found</Heading>
 
-      <Typography paragraph sx={textStyle}>
+      <Typography sx={textStyle}>
         Go{' '}
         <Link component={RouterLink} to="/" sx={textStyle}>
           home

@@ -5,16 +5,14 @@ import { DatabaseKey } from 'src/types';
 
 import { useGameState } from './useGameState';
 
-interface Action {
-  type: ActionType;
-  payload: ActionPayload;
-}
-
-interface ActionPayload {
-  active?: boolean;
-  nickname?: string;
-  playerId: string;
-}
+type Action =
+  | { type: ActionType.active; payload: { active: boolean; playerId: string } }
+  | {
+      type: ActionType.nickname;
+      payload: { nickname: string; playerId: string };
+    }
+  | { type: ActionType.remove; payload: { playerId: string } }
+  | { type: ActionType.reset; payload: { playerId: string } };
 
 enum ActionType {
   active = 'active',
@@ -23,7 +21,12 @@ enum ActionType {
   reset = 'reset',
 }
 
-const getInitialPlayerState = () => ({
+interface PlayerState {
+  active: boolean;
+  nickname: string;
+}
+
+const getInitialPlayerState = (): PlayerState => ({
   active: false,
   nickname: '',
 });
@@ -44,16 +47,20 @@ export function usePlayer() {
     DatabaseKey.players,
     (state, action) => {
       const { payload, type } = action;
-      state[payload.playerId] = state[payload.playerId] || {};
+
+      if (!Object.hasOwn(state, payload.playerId)) {
+        state[payload.playerId] = getInitialPlayerState();
+      }
+
       const player = state[payload.playerId];
 
       switch (type) {
         case ActionType.active:
-          player.active = payload.active!;
+          player.active = payload.active;
           break;
 
         case ActionType.nickname:
-          player.nickname = payload.nickname!;
+          player.nickname = payload.nickname;
           break;
 
         case ActionType.remove:
@@ -79,28 +86,32 @@ export function usePlayer() {
     activePlayersCount: Object.values(players).filter(({ active }) => active)
       .length,
 
-    setPlayerActive: (active: boolean) =>
+    setPlayerActive: (active: boolean) => {
       dispatch({
         type: ActionType.active,
         payload: { playerId, active },
-      }),
+      });
+    },
 
-    setPlayerNickname: (nickname: string) =>
+    setPlayerNickname: (nickname: string) => {
       dispatch({
         type: ActionType.nickname,
         payload: { playerId, nickname },
-      }),
+      });
+    },
 
-    removePlayer: () =>
+    removePlayer: () => {
       dispatch({
         type: ActionType.remove,
         payload: { playerId },
-      }),
+      });
+    },
 
-    resetPlayer: () =>
+    resetPlayer: () => {
       dispatch({
         type: ActionType.reset,
         payload: { playerId },
-      }),
+      });
+    },
   };
 }
