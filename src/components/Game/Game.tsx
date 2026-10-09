@@ -17,23 +17,35 @@ export default function Game() {
     return null;
   }
 
+  const players = (
+    <Grid size={{ xs: 12, sm: 4 }}>
+      <Players />
+      <Invite />
+    </Grid>
+  );
+
+  const round = (
+    <Grid size={{ xs: 12, sm: 8 }}>
+      <Round />
+    </Grid>
+  );
+
   return (
     <>
       <Heading>Round {gameState.round}</Heading>
 
-      <Grid
-        container
-        direction={isSmall ? 'column-reverse' : 'row'}
-        spacing={2}
-      >
-        <Grid size={{ xs: 12, sm: 4 }}>
-          <Players />
-          <Invite />
-        </Grid>
-
-        <Grid size={{ xs: 12, sm: 8 }}>
-          <Round />
-        </Grid>
+      <Grid container spacing={2}>
+        {isSmall ? (
+          <>
+            {round}
+            {players}
+          </>
+        ) : (
+          <>
+            {players}
+            {round}
+          </>
+        )}
       </Grid>
     </>
   );

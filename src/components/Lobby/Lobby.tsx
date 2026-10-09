@@ -23,23 +23,35 @@ export default function Lobby() {
     return null;
   }
 
+  const players = (
+    <Grid size={{ xs: 12, sm: 4 }}>
+      <Players />
+      <Invite />
+    </Grid>
+  );
+
+  const settings = (
+    <Grid size={{ xs: 12, sm: 8 }}>
+      <Settings />
+    </Grid>
+  );
+
   return (
     <>
       <Heading>Room</Heading>
 
-      <Grid
-        container
-        direction={isSmall ? 'column-reverse' : 'row'}
-        spacing={2}
-      >
-        <Grid size={{ xs: 12, sm: 4 }}>
-          <Players />
-          <Invite />
-        </Grid>
-
-        <Grid size={{ xs: 12, sm: 8 }}>
-          <Settings />
-        </Grid>
+      <Grid container spacing={2}>
+        {isSmall ? (
+          <>
+            {settings}
+            {players}
+          </>
+        ) : (
+          <>
+            {players}
+            {settings}
+          </>
+        )}
       </Grid>
 
       <br />
