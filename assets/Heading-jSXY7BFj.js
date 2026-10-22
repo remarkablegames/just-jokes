@@ -1,0 +1,1 @@
+import{t as e}from"./react-ZYESlY01.js";import{v as t}from"./hooks-NsTgT5re.js";import{t as n}from"./text-CRGwoFA_.js";var r=e();function i(e){return(0,r.jsx)(t,{component:`h1`,gutterBottom:!0,variant:`h4`,sx:n,children:e.children})}export{i as t};
