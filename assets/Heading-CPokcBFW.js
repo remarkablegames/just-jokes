@@ -1,0 +1,1 @@
+import{v as e}from"./hooks-DpTPMLjk.js";import{t}from"./text-CRGwoFA_.js";import{t as n}from"./react-DCTAcUCH.js";var r=n();function i(n){return(0,r.jsx)(e,{component:`h1`,gutterBottom:!0,variant:`h4`,sx:t,children:n.children})}export{i as t};
