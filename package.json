@@ -45,7 +45,7 @@
     "@types/mustache": "4.2.6",
     "@vitejs/plugin-react-swc": "4.3.3",
     "cypress": "16.2.1",
-    "cypress-cucumber-steps": "3.64.3",
+    "cypress-cucumber-steps": "4.0.0",
     "eslint": "10.14.0",
     "eslint-plugin-prettier": "5.5.7",
     "eslint-plugin-simple-import-sort": "14.0.0",
